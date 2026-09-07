@@ -31,7 +31,7 @@ This projecst aims to identify arc faults using an data captured with an oscillo
  
  ![Resistor Box](Resources/Images/resistor_box_and_inductor.png)
 
- **Appliance:**: Various appliances were used including a drill, a router, 
+ **Appliance:**: Various appliances were used including a drill and a router
 
 
 ### Data Specifications
