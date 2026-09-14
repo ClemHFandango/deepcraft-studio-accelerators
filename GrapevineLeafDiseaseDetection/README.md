@@ -26,12 +26,12 @@ Users can further expand this project by training their own models, importing ne
 
 ## Contents
 
-- **`Data`**: Contains data taken from Roboflow with images of grapevine leaf diseases (black measles, black rot, and leaf blight) and healthy leaves. The data consists of 4,960 annotated sessions (1,738 black_measles, 1,387 black_rot, 1,301 leaf_blight, 683 healthy bounding boxes).
+- **`Data`**: Contains data taken from Roboflow with images of grapevine leaf diseases (black measles, black rot, and leaf blight) and healthy leaves: [Grapevine leaf disease datasets](https://universe.roboflow.com/search?q=grapevine%20leaf%20disease%20object%20detection). Data consists of 4,960 annotated sessions (1,738 black_measles, 1,387 black_rot, 1,301 leaf_blight, 683 healthy bounding boxes).
 
-	- [grape_dataset1](#grape_leaves_dataset)	- 1482 images from Roboflow (https://universe.roboflow.com/grape-rpakq/grapevine-leaves)
-	- [grape_dataset2](#grape_leaf_disease_detection_dataset)	- 268 images from Roboflow (https://universe.roboflow.com/laluna/grape-leaf-disease-detection-gzafz)
-	- [grape_dataset3](grape_leaf_diseases_dataset)	- 2364 images from Roboflow (https://universe.roboflow.com/skimok77/grape-leaf-diseases-tln5a)
-	- [grape_dataset4](#leaf_diseases_dataset)	- 846 images from Roboflow (https://universe.roboflow.com/trial1-53ber/grape-leaf-diseases-hqlrl) 
+	- grape_dataset1	- 1482 images from Roboflow (https://universe.roboflow.com/grape-rpakq/grapevine-leaves)
+	- grape_dataset2	- 268 images from Roboflow (https://universe.roboflow.com/laluna/grape-leaf-disease-detection-gzafz)
+	- grape_dataset3	- 2364 images from Roboflow (https://universe.roboflow.com/skimok77/grape-leaf-diseases-tln5a)
+	- grape_dataset4	- 846 images from Roboflow (https://universe.roboflow.com/trial1-53ber/grape-leaf-diseases-hqlrl)
 
 - **`Models`** - Stores the trained YOLO-based model and its quantized versions as well as their predictions.
 
@@ -55,13 +55,13 @@ Image data is stored as DEEPCRAFT™ Studio object-detection sessions under `Dat
 
 Data sources and commercial-use conditions:
 
-- [grape_dataset1](#grape_leaves_dataset) (1482 images, CC BY 4.0): https://universe.roboflow.com/grape-rpakq/grapevine-leaves
+- `grape_dataset1` (1482 images, CC BY 4.0): https://universe.roboflow.com/grape-rpakq/grapevine-leaves
   - Starting set: balanced close-up grapevine leaves for black measles, black rot, leaf blight, and healthy. Version 4 has no generated augmentations. Images containing any box whose shorter side is under 24 px at the 320 px training image size are skipped entirely. Near-duplicates shared with the other PlantVillage-style sources were removed after import.
-- [grape_dataset2](#grape_leaf_disease_detection_dataset) (268 images, CC BY 4.0): https://universe.roboflow.com/laluna/grape-leaf-disease-detection-gzafz
+- `grape_dataset2` (268 images, CC BY 4.0): https://universe.roboflow.com/laluna/grape-leaf-disease-detection-gzafz
   - Lesion-level boxes on grape leaves (esca/black measles, black rot, leaf blight, and healthy). Version 1 has no generated augmentations. Many frames were skipped because at least one lesion box was under 24 px at the 320 px training size, so remaining sessions stay fully annotated.
-- [grape_dataset3](grape_leaf_diseases_dataset)  (2364 images, CC BY 4.0): https://universe.roboflow.com/skimok77/grape-leaf-diseases-tln5a
+- `grape_dataset3` (2364 images, CC BY 4.0): https://universe.roboflow.com/skimok77/grape-leaf-diseases-tln5a
   - Full four-class grape leaf set (black rot, esca, leaf blight, healthy). Version 1 is used because version 2 bakes in generated augmentations. Near-duplicates of grape_dataset1 were removed after import. Images containing any box whose shorter side is under 24 px at the 320 px training image size are skipped entirely.
-- [grape_dataset4](#leaf_diseases_dataset) (846 images, Public Domain): https://universe.roboflow.com/trial1-53ber/grape-leaf-diseases-hqlrl
+- `grape_dataset4` (846 images, Public Domain): https://universe.roboflow.com/trial1-53ber/grape-leaf-diseases-hqlrl
   - Public-domain grape leaf images with Indonesian class names mapped to black rot, esca/black measles, leaf blight, and healthy. Version 1 has no generated augmentations. Near-duplicates of the PlantVillage-style sources were removed after import. Images containing any box whose shorter side is under 24 px at the 320 px training image size are skipped entirely.
 
 ## Adding More Data
@@ -92,17 +92,71 @@ Some points to highlight:
 
 ## Attribution & Citation
 
+Please cite the datasets used in this project.
 
-<a name="grape_leaves_dataset"> [Grape Leaves Dataset](https://universe.roboflow.com/grape-rpakq/grapevine-leaves), author: grape-rpakq, published August 2024, visited on 2026-09-08 </a> 	
+```bibtex
+@misc{
+grapevine-leaves_dataset,
+title = { Grapevine Leaves Dataset },
+type = { Open Source Dataset },
+author = { Grape },
+howpublished = { \url{ https://universe.roboflow.com/grape-rpakq/grapevine-leaves } },
+url = { https://universe.roboflow.com/grape-rpakq/grapevine-leaves },
+journal = { Roboflow Universe },
+publisher = { Roboflow },
+year = { 2024 },
+month = { aug },
+note = { visited on 2026-09-08 },
+}
+```
 
-<a name="grape_leaf_disease_detection_dataset"> [Grape Leaf Disease Detection Dataset](https://universe.roboflow.com/laluna/grape-leaf-disease-detection-gzafz), author: laluna, published May 2026, visited on 2026-09-08  </a>
-	
-<a name="grape_leaf_diseases_dataset"> [Grape Leaf Diseases Dataset](https://universe.roboflow.com/skimok77/grape-leaf-diseases-tln5a), author: skimok77, published July 2025, visited on 2026-09-08 </a>	
+```bibtex
+@misc{
+grape-leaf-disease-detection-gzafz_dataset,
+title = { Grape Leaf Disease Detection Dataset },
+type = { Open Source Dataset },
+author = { laluna },
+howpublished = { \url{ https://universe.roboflow.com/laluna/grape-leaf-disease-detection-gzafz } },
+url = { https://universe.roboflow.com/laluna/grape-leaf-disease-detection-gzafz },
+journal = { Roboflow Universe },
+publisher = { Roboflow },
+year = { 2026 },
+month = { may },
+note = { visited on 2026-09-08 },
+}
+```
 
-<a name="grape-leaf_diseases_dataset"> [grape-leaf-diseases Dataset](https://universe.roboflow.com/trial1-53ber/grape-leaf-diseases-hqlrl), author: trial1, published May 2025, visited on 2026-09-08 </a>	
+```bibtex
+@misc{
+grape-leaf-diseases-tln5a_dataset,
+title = { Grape Leaf Diseases Dataset },
+type = { Open Source Dataset },
+author = { skimok77 },
+howpublished = { \url{ https://universe.roboflow.com/skimok77/grape-leaf-diseases-tln5a } },
+url = { https://universe.roboflow.com/skimok77/grape-leaf-diseases-tln5a },
+journal = { Roboflow Universe },
+publisher = { Roboflow },
+year = { 2025 },
+month = { jul },
+note = { visited on 2026-09-08 },
+}
+```
 
-   
-	
+```bibtex
+@misc{
+grape-leaf-diseases-hqlrl_dataset,
+title = { grape-leaf-diseases Dataset },
+type = { Open Source Dataset },
+author = { trial1 },
+howpublished = { \url{ https://universe.roboflow.com/trial1-53ber/grape-leaf-diseases-hqlrl } },
+url = { https://universe.roboflow.com/trial1-53ber/grape-leaf-diseases-hqlrl },
+journal = { Roboflow Universe },
+publisher = { Roboflow },
+year = { 2025 },
+month = { may },
+note = { visited on 2026-09-08 },
+}
+```
 
 ## Getting Started
 

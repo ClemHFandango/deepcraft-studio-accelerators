@@ -5,7 +5,7 @@
   "algorithm": "Object Detection",
   "sensors": ["Camera"],
   "domain": ["Vision"],
-  "application": ["Industrial IoT", "Smart Manufacturing"],
+  "application": ["Agriculture and Farming", "Industrial IoT", "Smart Manufacturing"],
   "use_case": ["Object Detection", "Leaf Disease Detection"],
   "kit": ["PSOC\u2122 Edge AI Kit", "PSOC\u2122 Edge Eval Kit"],
   "device": ["PSOC\u2122 Edge"],
