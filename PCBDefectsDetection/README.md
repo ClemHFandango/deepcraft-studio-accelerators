@@ -13,15 +13,15 @@ The object detection model is YOLO-based and it can be used in applications for
 
 Users can further expand this project by training their own models, importing new data, and evaluating performance using the provided tools.
 
-- **Machine learning method:** YOLO-based object detection trained in DEEPCRAFT Studio
+- **Machine learning method:** YOLO-based object detection trained in DEEPCRAFT™ Studio
 - **Sensor and data type:** Fixed AOI camera, microscope, or top-down RGB inspection imagery (image data)
 - **Why it matters:** Enables automated visual inspection to flag solder bridges, broken traces, and drill errors on production lines before assembly or shipment.
 
 ## Features
 
 1. **Real-Time Detection**: The project uses a YOLO-based model to detect and classify PCB manufacturing defects (short, spur, missing hole, mouse bite, and open circuit) accurately and in real-time.
-2. **Custom Data Integration**: Users can add new data through the data import or using `Object Detection Data Collection Graph UX` template and label their own data for model training.
-3. **Model Evaluation**: Evaluate trained models by double click `.tflite` file, and it will generate a Graph Ux project to run.
+2. **Custom Data Integration**: Users can add new data through data import or by using the `Object Detection Data Collection Graph UX` template and label their own data for model training.
+3. **Model Evaluation**: Evaluate trained models by double-clicking the `.tflite` file, and it will generate a Graph UX project to run.
 
 ## Contents
 
@@ -42,14 +42,14 @@ Users can further expand this project by training their own models, importing ne
 ## Steps to get started: Model Training and Evaluation
 
 1. Train the YOLO-based model using the provided dataset or custom data.
-2. Download the trained model `.tflite` file from trained job.
-3. Double click the `.tflite` file and it will create a Graph Ux project.
-4. Run the Graph UX project to evaluate model performance in real time using selected camera.
-5. Put in front of the camera pictures with PCB manufacturing defects (short, spur, missing hole, mouse bite, and open circuit) and observe detection from live camera.
+2. Download the trained model `.tflite` file from the trained job.
+3. Double-click the `.tflite` file and it will create a Graph UX project.
+4. Run the Graph UX project to evaluate model performance in real time using the selected camera.
+5. Place pictures with PCB manufacturing defects (short, spur, missing hole, mouse bite, and open circuit) in front of the camera and observe detection from the live camera.
 
 ## Sensor(s) & Data
 
-Image data is stored as DEEPCRAFT Studio object-detection sessions under `Data/`. Each session contains a JPG image and `LabelXml` annotations with normalized center bounding boxes (`X`, `Y`, `Width`, `Height`). The project currently contains 4,811 sessions targeting PCB manufacturing defects (short, spur, missing hole, mouse bite, and open circuit): 3,263 defect-labeled and 1,548 in-domain defect-free negatives.
+Image data is stored as DEEPCRAFT™ Studio object-detection sessions under `Data/`. Each session contains a JPG image and `LabelXml` annotations with normalized center bounding boxes (`X`, `Y`, `Width`, `Height`). The project currently contains 4,811 sessions targeting PCB manufacturing defects (short, spur, missing hole, mouse bite, and open circuit): 3,263 defect-labeled and 1,548 in-domain defect-free negatives.
 
 Data sources and commercial-use conditions:
 
@@ -75,7 +75,7 @@ You can add more data to the project following the steps below to improve detect
 1. Use `Object Detection Data Collection Graph UX` template to collect and label new data.
 2. Import data to your project and retrain to get an updated model.
 
-You can also import data from any other source (for example, your own images or another dataset) as long as it follows the DEEPCRAFT Studio object-detection format: images with matching `LabelXml` annotations using normalized center coordinates (`X`, `Y`, `Width`, `Height`). See [Bring your own data for object detection projects](https://developer.imagimob.com/deepcraft-studio/data-preparation/bring-your-data/bring-your-own-data-object-detection).
+You can also import data from any other source (for example, your own images or another dataset) as long as it follows the DEEPCRAFT™ Studio object-detection format: images with matching `LabelXml` annotations using normalized center coordinates (`X`, `Y`, `Width`, `Height`). See [Bring your own data for object detection projects](https://developer.imagimob.com/deepcraft-studio/data-preparation/bring-your-data/bring-your-own-data-object-detection).
 
 ## Steps to Production
 
@@ -90,76 +90,78 @@ The recommended path to production for this project includes the following steps
 
 Some points to highlight:
 
-- **Increase data variability:** Collect data from different environments, cameras, lighting conditions, distances, and backgrounds. Use DEEPCRAFT Studio augmentation settings (flip, scale, brightness, exposure) to increase image variability for vision models.
+- **Increase data variability:** Collect data from different environments, cameras, lighting conditions, distances, and backgrounds. Use DEEPCRAFT™ Studio augmentation settings (flip, scale, brightness, exposure) to increase image variability for vision models.
 - **Keep test data independent:** Make sure the test set is not used in train or validation and reflects scenarios where the model must generalize.
 - **Add negative data:** Include images without the target objects and common look-alikes to improve robustness against false positives.
 
-## Attribution & Citation
+## Attributions & Citations
 
-@misc{
-pcb-dataset-defect-fa2h3_dataset,
-title = { PCB Dataset Defect Dataset },
-type = { Open Source Dataset },
-author = { NITW },
-howpublished = { \url{ https://universe.roboflow.com/nitw-tfufy/pcb-dataset-defect-fa2h3 } },
-url = { https://universe.roboflow.com/nitw-tfufy/pcb-dataset-defect-fa2h3 },
-journal = { Roboflow Universe },
-publisher = { Roboflow },
-year = { 2026 },
-month = { feb },
-note = { visited on 2026-07-09 },
+```bibtex
+@misc{pcb-dataset-defect-fa2h3_dataset,
+  title = { PCB Dataset Defect Dataset },
+  type = { Open Source Dataset },
+  author = { NITW },
+  howpublished = { \url{ https://universe.roboflow.com/nitw-tfufy/pcb-dataset-defect-fa2h3 } },
+  url = { https://universe.roboflow.com/nitw-tfufy/pcb-dataset-defect-fa2h3 },
+  journal = { Roboflow Universe },
+  publisher = { Roboflow },
+  year = { 2026 },
+  month = { feb },
+  note = { visited on 2026-07-09 },
 }
+```
 
-
-@misc{
-deeppcb-4dhir-ic1ay_dataset,
-title = { DeepPCB Dataset },
-type = { Open Source Dataset },
-author = { dataset },
-howpublished = { \url{ https://universe.roboflow.com/dataset-7wlmu/deeppcb-4dhir-ic1ay } },
-url = { https://universe.roboflow.com/dataset-7wlmu/deeppcb-4dhir-ic1ay },
-journal = { Roboflow Universe },
-publisher = { Roboflow },
-year = { 2025 },
-month = { jan },
-note = { visited on 2026-07-09 },
+```bibtex
+@misc{deeppcb-4dhir-ic1ay_dataset,
+  title = { DeepPCB Dataset },
+  type = { Open Source Dataset },
+  author = { dataset },
+  howpublished = { \url{ https://universe.roboflow.com/dataset-7wlmu/deeppcb-4dhir-ic1ay } },
+  url = { https://universe.roboflow.com/dataset-7wlmu/deeppcb-4dhir-ic1ay },
+  journal = { Roboflow Universe },
+  publisher = { Roboflow },
+  year = { 2025 },
+  month = { jan },
+  note = { visited on 2026-07-09 },
 }
+```
 
-
-@misc{
-hripcb_dataset,
-title = { HRIPCB Dataset },
-type = { Open Source Dataset },
-author = { MA007 },
-howpublished = { \url{ https://universe.roboflow.com/ma007/hripcb } },
-url = { https://universe.roboflow.com/ma007/hripcb },
-journal = { Roboflow Universe },
-publisher = { Roboflow },
-year = { 2023 },
-month = { apr },
-note = { visited on 2026-07-09 },
+```bibtex
+@misc{hripcb_dataset,
+  title = { HRIPCB Dataset },
+  type = { Open Source Dataset },
+  author = { MA007 },
+  howpublished = { \url{ https://universe.roboflow.com/ma007/hripcb } },
+  url = { https://universe.roboflow.com/ma007/hripcb },
+  journal = { Roboflow Universe },
+  publisher = { Roboflow },
+  year = { 2023 },
+  month = { apr },
+  note = { visited on 2026-07-09 },
 }
+```
 
-
-@misc{
-pcb-defect-detection-fyopy_dataset,
-title = { PCB Defect detection Dataset },
-type = { Open Source Dataset },
-author = { PCB },
-howpublished = { \url{ https://universe.roboflow.com/pcb-rfgn5/pcb-defect-detection-fyopy } },
-url = { https://universe.roboflow.com/pcb-rfgn5/pcb-defect-detection-fyopy },
-journal = { Roboflow Universe },
-publisher = { Roboflow },
-year = { 2024 },
-month = { apr },
-note = { visited on 2026-07-09 },
+```bibtex
+@misc{pcb-defect-detection-fyopy_dataset,
+  title = { PCB Defect detection Dataset },
+  type = { Open Source Dataset },
+  author = { PCB },
+  howpublished = { \url{ https://universe.roboflow.com/pcb-rfgn5/pcb-defect-detection-fyopy } },
+  url = { https://universe.roboflow.com/pcb-rfgn5/pcb-defect-detection-fyopy },
+  journal = { Roboflow Universe },
+  publisher = { Roboflow },
+  year = { 2024 },
+  month = { apr },
+  note = { visited on 2026-07-09 },
 }
-
+```
 
 ## Getting Started
 
-Please visit [developer.imagimob.com](https://developer.imagimob.com), where you can read about Imagimob Studio and go through step-by-step tutorials to get you quickly started.
+Please visit [developer.imagimob.com](https://developer.imagimob.com), where you can read about DEEPCRAFT™ Studio and go through step-by-step tutorials to get you quickly started.
 
 For object-detection data formats, see [Bring your own data for object detection projects](https://developer.imagimob.com/deepcraft-studio/data-preparation/bring-your-data/bring-your-own-data-object-detection).
 
-If you need support or if you want to know how to deploy the model on to the device, please submit a ticket on the Infineon [community forum](https://community.infineon.com/t5/Imagimob/bd-p/Imagimob/page/1) Imagimob Studio page.
+## Help & Support
+
+If you need support or if you want to know how to deploy the model onto the device, please submit a ticket on the Infineon [community forum](https://community.infineon.com/t5/Imagimob/bd-p/Imagimob/page/1) DEEPCRAFT™ Studio page.

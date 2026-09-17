@@ -1,6 +1,6 @@
-﻿# Car Detection
+# Car Detection
 
-This project is designed to work exclusively with DEEPCRAFT™ Studio. Download it from [here](https://softwaretools.infineon.com/assets/com.ifx.tb.tool.deepcraftstudio).
+This project is designed to work exclusively with DEEPCRAFT™ Studio. Download it from [here](https://softwaretools.infineon.com/assets/com.ifx.tb.tool.deepcraftstudio)
 
 ## Overview - Use-Case
 
@@ -41,15 +41,15 @@ This project demonstrates how to approach the task from a Computer Vision perspe
 ## Features
 
 1. **Real-Time Detection**: The project uses a YOLO-based model to detect cars accurately and in real-time.
-2. **Custom Data Integration**: Users can add new data through the data import or using `Object Detection Data Collection Graph UX` template and label their own data for model training.
-3. **Model Evaluation**: Evaluate trained models by double click `.tflite` file, and it will generate a Graph UX project to run.
+2. **Custom Data Integration**: Users can add new data through data import or by using the `Object Detection Data Collection Graph UX` template and label their own data for model training.
+3. **Model Evaluation**: Evaluate trained models by double-clicking the `.tflite` file, and it will generate a Graph UX project to run.
 
 ## Contents
 
 - **`Data`**: Folder for your data. This project contains **3,274** annotated object-detection sessions (JPG + `LabelXml`), using a single target class (`car`):
-	- `img*` — 1,400 images from Roboflow ([Car Detection Model](https://app.roboflow.com/lolepls/car-detection-model-bwjpb-92kbi/train))
-	- `pc*` — 1,771 images from Roboflow ([Car Detection](https://app.roboflow.com/lolepls/car-detection-5fc7i-vtlqe/train))
-	- `20260218_*` — 103 images collected by Infineon on a small toy-car demo setup
+	- **`img*`** — 1,400 images from Roboflow ([Car Detection Model](https://app.roboflow.com/lolepls/car-detection-model-bwjpb-92kbi/train))
+	- **`pc*`** — 1,771 images from Roboflow ([Car Detection](https://app.roboflow.com/lolepls/car-detection-5fc7i-vtlqe/train))
+	- **`20260218_*`** — 103 images collected by Infineon on a small toy-car demo setup
 - **`Models`**: Folder where trained models, their predictions, quantized versions, and generated Edge code are saved.
 - **`Tools`**: Folder containing additional tools. `Tools/rename_dataset.py` shortens image file names in a Roboflow/COCO export before you import the data into Studio (see [Renaming a COCO export](#renaming-a-coco-export)).
 
@@ -153,9 +153,9 @@ Some points to highlight:
 - **Add negative data:** Include images without the target objects and common look-alikes to improve robustness against false positives.
 
 
-## Attribution & Citation
+## Attributions & Citations
 
-
+```bibtex
 @misc{car-detection-model-bwjpb-92kbi,
   title = {Car Detection Model Dataset},
   type = {Open Source Dataset},
@@ -168,7 +168,9 @@ Some points to highlight:
   month = {jul},
   note = {visited on 2026-07-21; used for img* sessions},
 }
+```
 
+```bibtex
 @misc{car-detection-5fc7i-vtlqe,
   title = {Car Detection Dataset},
   type = {Open Source Dataset},
@@ -181,14 +183,14 @@ Some points to highlight:
   month = {jul},
   note = {visited on 2026-07-21; used for pc* sessions},
 }
-
+```
 
 ## Getting Started
 
-Please visit [developer.imagimob.com](https://developer.imagimob.com), where you can read about Imagimob Studio and go through step-by-step tutorials to get started quickly.
+Please visit [developer.imagimob.com](https://developer.imagimob.com), where you can read about DEEPCRAFT™ Studio and go through step-by-step tutorials to get started quickly.
 
 For object-detection data formats, see [Bring your own data for object detection projects](https://developer.imagimob.com/deepcraft-studio/data-preparation/bring-your-data/bring-your-own-data-object-detection).
 
 ## Help & Support
 
-If you need support or if you want to know how to deploy the model on the device, please submit a ticket on the Infineon [community forum](https://community.infineon.com/t5/Imagimob/bd-p/Imagimob/page/1) Imagimob Studio page.
+If you need support or if you want to know how to deploy the model on the device, please submit a ticket on the Infineon [community forum](https://community.infineon.com/t5/Imagimob/bd-p/Imagimob/page/1) DEEPCRAFT™ Studio page.

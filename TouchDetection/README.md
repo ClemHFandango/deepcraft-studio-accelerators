@@ -1,20 +1,26 @@
-﻿# Capsense-Sense based touch detection
+# CAPSENSE™-based touch detection
 
 This project is designed to work exclusively with DEEPCRAFT™ Studio. Download it from [here](https://softwaretools.infineon.com/assets/com.ifx.tb.tool.deepcraftstudio)
 
-## Overview
+## Overview - Use-Case
 
-This Accelerator project allows you to build a touch detection that can be used on any supported Infineon MCU with a capsense.
+This Accelerator project allows you to build a touch detector that can be used on any supported Infineon MCU with CAPSENSE™.
 
 This Accelerator project gives you the infrastructure to allow you to expand on the project or to mimic it and create your own project based on the available/included data and tools. 
 
-The Accelerator project is intended to be a demonstration of how you could build a model using Imagimob AI for a device with a capsense.
+The Accelerator project is intended to be a demonstration of how you could build a model using DEEPCRAFT™ Studio for a device with CAPSENSE™.
 
-Below you can find code examples about how to deploy the output of this project to any supported Infineon MCU with a capsense.
+Below you can find code examples about how to deploy the output of this project to any supported Infineon MCU with CAPSENSE™.
 
-## Data and Classes
+## Contents
 
-The capsense needs to be set up to collect data at 50 Hz using 2 channels (button0 and button1) with raw_count, baseline and diffcount for each channel making it six features in total.
+**`Data`** 	- Folder to put your data.
+
+**`Models`** - Folder where trained models, their predictions and generated Edge code are saved.
+
+## Sensor(s) & Data
+
+The CAPSENSE™ sensor needs to be set up to collect data at 50 Hz using 2 channels (button0 and button1) with raw_count, baseline and diffcount for each channel, making it six features in total.
 
 The provided data consists of nearly 117 recordings from 1 individual.
 
@@ -27,7 +33,7 @@ The project has the following 2 classes:
 
 You can find below guided code examples on how to use Imagimob AI together with Infineon hardware and software to collect data and deploy your models.
 
-Additional info are available in the guide [Getting Started with MTBML and Imagimob Studio](https://www.infineon.com/dgdl/Infineon-Machine_learning_using_ModusToolbox_Imagimob_Studio-ApplicationNotes-v01_00-EN.pdf?fileId=8ac78c8c8a8d344a018aa850bb2d21b5).
+Additional information is available in the guide [Getting Started with MTBML and Imagimob Studio](https://www.infineon.com/dgdl/Infineon-Machine_learning_using_ModusToolbox_Imagimob_Studio-ApplicationNotes-v01_00-EN.pdf?fileId=8ac78c8c8a8d344a018aa850bb2d21b5).
 
 ### Required Hardware and Software
 
@@ -48,7 +54,11 @@ Additional info are available in the guide [Getting Started with MTBML and Imagi
 
 - [Imagimob Deploy](https://github.com/Infineon/mtb-example-ml-imagimob-deploy) > code example that shows how to deploy Imagimob-generated machine learning models on an Infineon PSoC™ Pioneer or Evaluation Kit (see [list of supported kits](https://github.com/Infineon/mtb-example-ml-imagimob-deploy/tree/master#supported-kits-make-variable-target)) with [ModusToolbox™](https://www.infineon.com/cms/en/design-support/tools/sdk/modustoolbox-software/)
 
-## Taking the Project Further
+## Adding More Data
+
+Collect additional CAPSENSE™ recordings at 50 Hz and label touch vs no-touch in Studio. You can also add new classes such as left-touch and right-touch.
+
+## Steps to Production
 
 You can take the project further in a number of different ways:
 
@@ -58,16 +68,14 @@ You can take the project further in a number of different ways:
 
 3. You can use this project as inspiration to do your own touch detection project.
 
-## Contents
+## Attributions & Citations
 
-`Data` 	- Folder to put your data.
-
-`Models` - Folder where trained models, their predictions and generated Edge code are saved.
+Unless noted otherwise, data included in this project was collected for this accelerator. Usage is subject to the [DEEPCRAFT™ Studio Terms and Conditions](https://developer.imagimob.com/legal/studio-terms-and-conditions).
 
 ## Getting Started
 
-Please visit [developer.imagimob.com](https://developer.imagimob.com), where you can read about Imagimob Studio and go through step-by-step tutorials to get you quickly started.
+Please visit [developer.imagimob.com](https://developer.imagimob.com), where you can read about DEEPCRAFT™ Studio and go through step-by-step tutorials to get you quickly started.
 
 ## Help & Support
 
-If you need support or if you want to know how to deploy the model on to the device, please submit a ticket on the Infineon [community forum ](https://community.infineon.com/t5/Imagimob/bd-p/Imagimob/page/1) Imagimob Studio page.
+If you need support or if you want to know how to deploy the model onto the device, please submit a ticket on the Infineon [community forum](https://community.infineon.com/t5/Imagimob/bd-p/Imagimob/page/1) DEEPCRAFT™ Studio page.

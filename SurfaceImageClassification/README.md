@@ -1,8 +1,8 @@
-﻿# Surface Image Classification
+# Surface Image Classification
 
 This project is designed to work exclusively with DEEPCRAFT™ Studio. Download it from [here](https://softwaretools.infineon.com/assets/com.ifx.tb.tool.deepcraftstudio)
 
-## Overview
+## Overview - Use-Case
 
 The Surface Image Classification Project is a real-time road surface classification system powered by a deep learning backend for classifying different road surface conditions. The project aims to build a robust end-to-end system that identifies various asphalt and road surfaces including dry, rainy, muddy, snowy, and other surface conditions from live video input.
 
@@ -22,30 +22,33 @@ Users can further expand this project by training their own models, importing ne
 
 1.	Real-Time Surface Classification: The project uses a deep learning model to classify road surface conditions accurately and in real-time.
 
-2.	Custom Data Integration: Users can add new data through the data import or using Image Classification Data Collection Graph UX template and label their own data for model training.
+2.	Custom Data Integration: Users can add new data through data import or by using the Image Classification Data Collection Graph UX template and label their own data for model training.
 
 3.	Model Evaluation: Evaluate trained models by providing .tflite file and when you double click, it will automatically generate a graph UX project for real time evaluation.
 
 ## Contents
 
-•	Data: Contains data (7350 rgb images) derived from various road surface datasets for training and testing the model, including different asphalt types, road surfaces, and weather conditions (rainy, muddy, snowy, etc.).
+**`Data`** - Contains data (7350 rgb images) derived from various road surface datasets for training and testing the model, including different asphalt types, road surfaces, and weather conditions (rainy, muddy, snowy, etc.).
 
-•	Models: Stores the trained image classification model and its quantized versions, prepared for deployment.
-																												   
+**`Models`** - Stores the trained image classification model and its quantized versions, prepared for deployment.
 
 ## Steps to get started: Model Training and Evaluation
 
 1.	Train the image classification model using the provided dataset or custom data.
 
-2.	Download the trained model .tflite file from trained job.
+2.	Download the trained model .tflite file from the trained job.
 
-3.	Double click the downloaded model and it will create a Graph UX project to evaluate model.
+3.	Double-click the downloaded model and it will create a Graph UX project to evaluate the model.
 
-4.	Run the Graph UX project to evaluate model performance in real time using selected camera.
+4.	Run the Graph UX project to evaluate model performance in real time using the selected camera.
 
 5.	Observe surface classification from live camera feed.
 
-## Adding more data
+## Sensor(s) & Data
+
+This project uses RGB camera images (USB camera, phone, or similar). Import additional images as DEEPCRAFT™ Studio sessions and label them in Studio, or use the Object Detection / Image Classification Data Collection Graph UX template.
+
+## Adding More Data
 
 •	You can collect more data to the project following the steps below to improve the existing surface classifications or to include new ones.
 
@@ -59,7 +62,7 @@ Users can further expand this project by training their own models, importing ne
 
 Note: This project contains rgb format images, so new data should have rgb format.
 
-## Steps to production
+## Steps to Production
 
 The recommended path to production for this project includes the following steps:
 
@@ -76,30 +79,31 @@ The recommended path to production for this project includes the following steps
 •	Include data from various camera angles and perspectives to enhance classification accuracy.
 
 
-## Attribution & Citation
+## Attributions & Citations
 
 This dataset in turn contains data derived from multiple projects:
 
 Road Surface Classification Dataset created by Team Roboflow and licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
-@misc{
-road-surface-types-qmeud_dataset,
-title = { road surface types Dataset },
-type = { Open Source Dataset },
-author = { issues },
-howpublished = { \url{ https://universe.roboflow.com/issues/road-surface-types-qmeud } },
-url = { https://universe.roboflow.com/issues/road-surface-types-qmeud },
-journal = { Roboflow Universe },
-publisher = { Roboflow },
-year = { 2025 },
-month = { feb },
-note = { visited on 2025-11-28 },
+```bibtex
+@misc{road-surface-types-qmeud_dataset,
+  title = { road surface types Dataset },
+  type = { Open Source Dataset },
+  author = { issues },
+  howpublished = { \url{ https://universe.roboflow.com/issues/road-surface-types-qmeud } },
+  url = { https://universe.roboflow.com/issues/road-surface-types-qmeud },
+  journal = { Roboflow Universe },
+  publisher = { Roboflow },
+  year = { 2025 },
+  month = { feb },
+  note = { visited on 2025-11-28 },
 }
+```
 
 ## Getting Started
 
-Please visit [developer.imagimob.com](https://developer.imagimob.com), where you can read about Imagimob Studio and go through step-by-step tutorials to get you quickly started.
+Please visit [developer.imagimob.com](https://developer.imagimob.com), where you can read about DEEPCRAFT™ Studio and go through step-by-step tutorials to get you quickly started.
 
 ## Help & Support
 
-If you need support or if you want to know how to deploy the model on to the device, please submit a ticket on the Infineon [community forum ](https://community.infineon.com/t5/Imagimob/bd-p/Imagimob/page/1) Imagimob Studio page.
+If you need support or if you want to know how to deploy the model onto the device, please submit a ticket on the Infineon [community forum](https://community.infineon.com/t5/Imagimob/bd-p/Imagimob/page/1) DEEPCRAFT™ Studio page.

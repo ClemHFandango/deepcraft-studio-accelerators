@@ -4,13 +4,31 @@ This project is designed to work exclusively with DEEPCRAFT™ Studio. Download 
 
 **NOTE:** This project is the Baby Cry Studio Accelerator and not the DEEPCRAFT™ Ready Model for Baby Cry Detection. The Ready Model is available at [Baby Cry Detection in Infineon Developer Center](https://softwaretools.infineon.com/assets/com.ifx.tb.tool.deepcraftreadymodelforbabycrydetection)
 
-## Overview
+## Overview - Use-Case
 
 This Accelerator project allows you to build a baby cry detector that can be used on any supported Infineon MCU with a microphone. Everything is included to allow you to expand on the project to bring it to production on your own. 
 
 Below you can find code examples about how to deploy the output of this project to any supported Infineon MCU with a microphone.
 
-## Data and Classes
+## Contents
+
+**`Data`** - Folder where data is located
+
+- train_set - folder with "baby cry" and other (unlabelled) data used in the Train set 
+- validation_set - folder with "baby cry" and other (unlabelled) data used in the Validation set 
+- test_set - folder with "baby cry" and other (unlabelled) data used in the Test set 
+
+The folders train_set, validation_set, and test_set contain:
+- baby_cry	- folder with data for "baby cry" audio
+- other	- folder that contains all unlabelled data. It is intended to make the model more robust against random noises and thus lower false positives
+
+**`Units`** - Folder where custom layers and pre-processors can be added
+
+**`Models`** - Folder where trained models, their predictions and generated Edge code are saved. The folder includes also GradCam results for each session, which provide visual explanations of the model's predictions. For more information about GradCam, you can refer to the following [link](https://keras.io/examples/vision/grad_cam/).
+
+**`PreprocessorTrack`** - Folder where preprocessed data is located
+
+## Sensor(s) & Data
 
 Data with "baby cry" sound events and other types of sounds is already added to the project to get you started. You can add more data in the same format to further improve the model. 
 
@@ -25,14 +43,16 @@ The project has the following classes:
 
 *Note:* If you are using your own data, record it as 16 kHz mono, or edit the project preprocessor to fit your data format.
 
+## Adding More Data
 
-## Taking the Project Further
+Add more 16 kHz mono audio of baby cry and home-environment background sounds. Record with a microphone or Graph UX, import the sessions, and label them in Studio (manual or model-assisted).
 
-This project is only an Accelerator project and as such some work is needed to further develop this project. Such as including more data from home environments as well as some data You can take the project further in a number of different ways:
+## Steps to Production
+
+This is an Accelerator, so more work is needed before production. In particular, add more data from home environments. You can take the project further in a number of ways:
 
 1. You can add additional classes to the existing ones by adding the relevant data, for example, children talking, children playing, different ages etc.
 2. Add your own recorded data to the dataset and see if you can improve the performance of the provided model.
-
 
 
 **If you are interested in deploying an already production ready model into your product, Imagimob also offers a Baby Cry Detection Ready Model. Find out more at www.imagimob.com/products.**
@@ -42,7 +62,7 @@ This project is only an Accelerator project and as such some work is needed to f
 
 You can find below guided code examples on how to use Imagimob AI together with Infineon hardware and software to collect data and deploy your models.
 
-Additional info are available in the guide [Getting Started with MTBML and Imagimob Studio](https://www.infineon.com/dgdl/Infineon-Machine_learning_using_ModusToolbox_Imagimob_Studio-ApplicationNotes-v01_00-EN.pdf?fileId=8ac78c8c8a8d344a018aa850bb2d21b5).
+Additional information is available in the guide [Getting Started with MTBML and Imagimob Studio](https://www.infineon.com/dgdl/Infineon-Machine_learning_using_ModusToolbox_Imagimob_Studio-ApplicationNotes-v01_00-EN.pdf?fileId=8ac78c8c8a8d344a018aa850bb2d21b5).
 
 ### Required Hardware and Software
 
@@ -63,32 +83,14 @@ Additional info are available in the guide [Getting Started with MTBML and Imagi
 
 - [Imagimob Deploy](https://github.com/Infineon/mtb-example-ml-imagimob-deploy) > code example that shows how to deploy Imagimob-generated machine learning models on an Infineon PSoC™ Pioneer or Evaluation Kit (see [list of supported kits](https://github.com/Infineon/mtb-example-ml-imagimob-deploy/tree/master#supported-kits-make-variable-target)) with [ModusToolbox™](https://www.infineon.com/cms/en/design-support/tools/sdk/modustoolbox-software/)
 
+## Attributions & Citations
 
-## Contents
-
-`Data` - Folder where data is located
-
-- train_set - folder with "baby cry" and other (unlabelled) data used in the Train set 
-- validation_set - folder with "baby cry" and other (unlabelled) data used in the Validation set 
-- test_set - folder with "baby cry" and other (unlabelled) data used in the Test set 
-
-The folders train_set, validation_set, and test_set contain:
-- baby_cry	- folder with data for "baby cry" audio
-- other	- folder that contain all data that's unlabelled. It's intended make the model more robust against random noises and thus lowering false positives
-
-`Units` - Folder where custom layers and pre-processors can be added
-
-`Models` - Folder where trained models, their predictions and generated Edge code are saved. The folder includes also GradCam results for each session, which provide visual explanations of the model's predictions. For more information about GradCam, you can refer to the following [link](https://keras.io/examples/vision/grad_cam/).
-
-`PreprocessorTrack` - Folder where preprocessed data is located
-
-## Data Licence
-All included data, is based on data extracted from freesound.org using [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/deed.en) & [CC0](https://creativecommons.org/public-domain/cc0/), as subset of our total freesound set as you can see here: https://github.com/Infineon/deepcraft-studio-accelerators/blob/main/_AttributionLists/Freesound_Attribution_List.csv
+All included data is based on recordings from freesound.org under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/deed.en) and [CC0](https://creativecommons.org/public-domain/cc0/), as a subset of our master Freesound set: https://github.com/Infineon/deepcraft-studio-accelerators/blob/main/_AttributionLists/Freesound_Attribution_List.csv
 
 ## Getting Started
 
-Please visit [developer.imagimob.com](https://developer.imagimob.com), where you can read about Imagimob Studio and go through step-by-step tutorials to get you quickly started.
+Please visit [developer.imagimob.com](https://developer.imagimob.com), where you can read about DEEPCRAFT™ Studio and go through step-by-step tutorials to get you quickly started.
 
 ## Help & Support
 
-If you need support or if you want to know how to deploy the model on to the device, please submit a ticket on the Infineon [community forum ](https://community.infineon.com/t5/Imagimob/bd-p/Imagimob/page/1) Imagimob Studio page.
+If you need support or if you want to know how to deploy the model onto the device, please submit a ticket on the Infineon [community forum](https://community.infineon.com/t5/Imagimob/bd-p/Imagimob/page/1) DEEPCRAFT™ Studio page.

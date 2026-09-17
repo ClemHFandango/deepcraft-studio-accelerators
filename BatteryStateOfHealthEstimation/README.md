@@ -1,8 +1,9 @@
-﻿# Overview - Battery State of Health Estimation
+# Overview - Battery State of Health Estimation
 
 This project is designed to work exclusively with DEEPCRAFT™ Studio. Download it from [here](https://softwaretools.infineon.com/assets/com.ifx.tb.tool.deepcraftstudio)
 
-## Overview
+## Overview - Use-Case
+
 A Battery Management System (BMS) is a crucial component in any xEV, responsible for monitoring, protecting, and optimizing battery performance.
 
 - **Battery State Estimation Algorithms** lie at the core of the BMS. These algorithms compute battery states, which are essential for monitoring and controlling the battery system, as well as providing feedback to the operator.
@@ -23,22 +24,38 @@ The illustration below shows how the voltage profile within the input window evo
 
 ## Contents
 
-`Data` 	- This folder contains the dataset we used for training, which was generated from the original open source cycling data, available at: https://git.rwth-aachen.de/isea/battery-degradation-trajectory-prediction
+**`Data`** 	- This folder contains the dataset we used for training, which was generated from the original open source cycling data, available at: https://git.rwth-aachen.de/isea/battery-degradation-trajectory-prediction
 
 To prepare the data for model training, voltage–time profiles were extracted from each battery cycle. First, the raw measurements were filtered to include only valid charging segments within a specified voltage range. These segments were then aligned in time, resampled to a fixed number of points, concatenated with the total time and paired with the corresponding battery capacity values to form the training samples. Each sample, a.k.a data-label files, represents one cycle’s charging curve along with its measured state of health (SoH), making it suitable for direct use in our model.
 
-`Models` - Folder where the trained model, its predictions and generated Edge code are saved.
+**`Models`** - Folder where the trained model, its predictions and generated Edge code are saved.
 
-`Resources`	- This folder contains additional files. 
+**`Resources`**	- This folder contains additional files.
 
-## Taking the project further
+## Sensor(s) & Data
+
+The model uses voltage–time charging profiles from NMC-Graphite Sanyo/Panasonic UR18650E cells. See Contents for how the open-source cycling data was converted into training samples.
+
+## Adding More Data
+
+Expand with other manufacturers, operating conditions, and charging profiles. Optionally add current and temperature. Keep Train/Validation/Test disjoint.
+
+## Steps to Production
+
 Below are some points to expand and improve the topic further:
-- Expanding the dataset: include a wider range of manufacturers, operating conditions, and possibly chemistries. Additionaly, use data augmentation to increase the training data. Finally, incorporating different charging profiles is essential to replicate real world conditions.
+- Expanding the dataset: include a wider range of manufacturers, operating conditions, and possibly chemistries. Additionally, use data augmentation to increase the training data. Incorporating different charging profiles is essential to replicate real-world conditions.
+- Incorporating more sensor data, such as current and temperature, to provide richer information for more robust and accurate state-of-health estimation.
+- Investigating residual learning to make the model more robust to sensor inaccuracies in the deployment environment.
 
-- Incorporating more sensors data: such as current and temperature to provide the model with richer information for more robust and accurate state-of-health estimation. 
+## Attributions & Citations
 
-- Investigate approaches such as residual learning to increase the robustness of the model against sensors inaccuracies in the deployment environment.
-
-## References
 <a id="1">[1]</a>
 Li, W., Sengupta, N., Dechent, P., Howey, D., Annaswamy, A., & Sauer, D. U. (2021). Online capacity estimation of lithium-ion batteries with deep long short-term memory networks. Journal of power sources, 482, 228863.
+
+## Getting Started
+
+Please visit [developer.imagimob.com](https://developer.imagimob.com), where you can read about DEEPCRAFT™ Studio and go through step-by-step tutorials to get you quickly started.
+
+## Help & Support
+
+If you need support or if you want to know how to deploy the model onto the device, please submit a ticket on the Infineon [community forum](https://community.infineon.com/t5/Imagimob/bd-p/Imagimob/page/1) DEEPCRAFT™ Studio page.

@@ -1,8 +1,8 @@
-﻿# Drill Material Detection w/ Sensor Fusion
+# Drill Material Detection w/ Sensor Fusion
 
 This project is designed to work exclusively with DEEPCRAFT™ Studio. Download it from [here](https://softwaretools.infineon.com/assets/com.ifx.tb.tool.deepcraftstudio)
 
-## Overview
+## Overview - Use-Case
 
 This Studio Accelerator aims to provide general guidance on developing systems that detect machine operating conditions based on sound and vibration measurements via sensor fusion. 
 While this project monitors a simple hand drill, the same concepts and workflow can be easily applied to any other machine, industrial or consumer. Furthermore, similar techniques and models could be used in other use-cases such as monitoring the condition of an industrial environment based on the microphone and vibration outputs.
@@ -30,25 +30,27 @@ This project demonstrates how to approach classification-based sound and vibrati
 
 ## Contents
 
-`Data` - Folder to put your data.
+**`Data`** - Folder to put your data.
  
-`Models` - Folder where trained models, their predictions, and generated Edge code are saved.
+**`Models`** - Folder where trained models, their predictions, and generated Edge code are saved.
 
-`Tools`    - Folder with the Data Collection GraphUX project you can use for collecting more data and a ModusToolbox project for deploying the model.
+**`Tools`**    - Folder with the Data Collection GraphUX project you can use for collecting more data and a ModusToolbox project for deploying the model.
 
+## Sensor(s) & Data
 
-## Sensor settings specification
-
-This Studio Accelerator requires the [PSOC™ Edge E84 AI Evaluation Kit](https://www.infineon.com/evaluation-board/kit-pse84-ai). This platform is equipped with PSOC™ Edge E84, MEMS Microphone and IMU sensors. The board is designed for easy prototyping and lets you collect real-life data to easily build a compelling ML product fast.
+This Accelerator was built using data collected with the [PSOC™ Edge E84 AI Evaluation Kit](https://www.infineon.com/evaluation-board/kit-pse84-ai). This platform is equipped with PSOC™ Edge E84, MEMS Microphone and IMU sensors.
 
 The hand drill is optional; you may want to collect data directly from your machinery instead. However, if you want to replicate the project out-of-the-box with a hand drill, any product similar to the one shown will be suitable. Mount the PSOC™ Edge AI Evaluation Kit equipped with MEMS Microphone and IMU sensors onto a hand drill, with the microphone's pickup section facing the drill bit - see image below.
 
 ![](Resources/imgs/HandDrill.png)
 
 ## Collection of Data
+
 Details on Data Collection and Preprocessing Generation can be found in the README of Tools/DataCollection
 
+## Adding More Data
 
+See `Tools/DataCollection` for data collection and preprocessor-generation steps. Import new sessions into the project and label wood, plastic, and air (idle) in Studio.
 
 ## Steps to Production
 
@@ -82,17 +84,21 @@ The `Models` folder contains several models defined for guaranteed real-time per
 
   **4. Deploy and do a real-time test of your prototype model**
 
-  Last thing to be done in prototyping phase is to deploy the firmware to the device by leveraging the deployment project in the `Tools` folder and test the firmware on the machinery. The UART terminal will show you real-time predictions on machine behavior.
+  The last step in the prototyping phase is to deploy the firmware to the device by leveraging the deployment project in the `Tools` folder and test the firmware on the machinery. The UART terminal will show you real-time predictions of machine behavior.
 
 **Note**: For details on preprocessor code generation, please refer to the “Generation of preprocessing code” section in the GraphUX project's [README.md](./Units/README.md) file.
 
   **5. Going to the production board system**
 
-Last step is to move to the actual final production setup. The production system will likely have the MCU placed on a board inside the machine,  the MEMS Microphone and the IMU sensor in a specific position, not necessary the same one of the prototyping phase. If you can go as close as possible to production conditions during prototyping phase, you will be able to deliver the same model also on the production board with little-to-no additional training or data needed. If this is not the case, you might need to do a new data collection step to allow the model to learn the nuances of the final setup. Follow again steps 2, 3 and 4 also for the production setup to reach a functioning application.
+Last step is to move to the actual final production setup. The production system will likely have the MCU placed on a board inside the machine, the MEMS Microphone and the IMU sensor in a specific position, not necessarily the same one of the prototyping phase. If you can go as close as possible to production conditions during prototyping phase, you will be able to deliver the same model also on the production board with little-to-no additional training or data needed. If this is not the case, you might need to do a new data collection step to allow the model to learn the nuances of the final setup. Follow again steps 2, 3 and 4 also for the production setup to reach a functioning application.
 
 You may also leverage DEEPCRAFT™ Studio's Transfer Learning features for fine-tuning the prototype model to production data. This could lead to better results and faster go-to-production times, but the usage of Transfer Learning is recommended only to experienced ML users.
 
-**Note:** All subsequent ML system lifetime monitoring procedures must be defined and implemented by you according to you needs, requirements and targets.
+**Note:** All subsequent ML system lifetime monitoring procedures must be defined and implemented by you according to your needs, requirements and targets.
+
+## Attributions & Citations
+
+Unless noted otherwise, data included in this project was collected for this accelerator. Usage is subject to the [DEEPCRAFT™ Studio Terms and Conditions](https://developer.imagimob.com/legal/studio-terms-and-conditions).
 
 ## Getting Started
 
@@ -100,4 +106,4 @@ Please visit [developer.imagimob.com](https://developer.imagimob.com), where you
 
 ## Help & Support
 
-If you need support or if you want to know how to deploy the model on to the device, please submit a ticket on the Infineon [community forum ](https://community.infineon.com/t5/Imagimob/bd-p/Imagimob/page/1) DEEPCRAFT™ Studio page.
+If you need support or if you want to know how to deploy the model onto the device, please submit a ticket on the Infineon [community forum](https://community.infineon.com/t5/Imagimob/bd-p/Imagimob/page/1) DEEPCRAFT™ Studio page.

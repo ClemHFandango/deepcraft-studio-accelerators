@@ -1,8 +1,8 @@
-﻿# Anomaly Detection for Vibrating Machinery - Studio Accelerator Project
+# Anomaly Detection for Vibrating Machinery
 
 This Accelerator is designed to work exclusively with DEEPCRAFT™ Studio. Download it from [here](https://softwaretools.infineon.com/assets/com.ifx.tb.tool.deepcraftstudio)
 
-## Use-case description
+## Overview - Use-Case
 
 This Accelerator project aims to provide general guidance on how to develop an **anomaly detection system** for detecting anomalous behavior in machinery based on vibration measurements.
 This project will monitor a simple desktop fan, but the same concept and workflow can be easily ported to any other machinery, whether industrial or consumer.
@@ -13,7 +13,7 @@ The task is framed as a **classification project**: a type of Supervised Learnin
 
 You can use this Accelerator project if:
 
-- You need to monitor a machinery whose behavior can be inferred by its vibration;
+- You need to monitor machinery whose behavior can be inferred from its vibration;
 - You have the possibility of collecting both normal functioning data and anomalous functioning data, either from an already faulty machine or by artificially inducing anomalies on a functioning machine.
 
 If you don't have the possibility of collecting a sufficient amount of anomalous data from your machine, this approach might not provide accurate results.
@@ -29,37 +29,37 @@ This project demonstrates how to approach classification-based vibration monitor
 
 ## Contents
 
-`Data` - Folder to put your data.
+**`Data`** - Folder to put your data.
 
-`Models` - Folder where trained models, their predictions, and generated Edge code are saved.
+**`Models`** - Folder where trained models, their predictions, and generated Edge code are saved.
 
-`Units`    - Folder where custom layers and pre-processors can be added. Not used in this project.
+**`Units`**    - Folder where custom layers and pre-processors can be added. Not used in this project.
 
-`Tools`    - Folder containing an auto-labeler script for easy labeling of data and the GraphUX Data Collection project.
+**`Tools`**    - Folder containing an auto-labeler script for easy labeling of data and the GraphUX Data Collection project.
 
-`Tools/IMUDataCollectionProject` - Folder with the Data Collection GraphUX project you can use for collecting more data.
+**`Tools/IMUDataCollectionProject`** - Folder with the Data Collection GraphUX project you can use for collecting more data.
 
-## Sensor settings specification
+## Sensor(s) & Data
 
-This Accelerator project requires the [PSOC™ 6 AI Evaluation Kit](https://www.infineon.com/cms/en/product/evaluation-boards/cy8ckit-062s2-ai/). This platform is equipped with PSoC™ 6 MCU and IMU sensors. The board is designed for easy prototyping and lets you collect real-life data to easily build a compelling ML product fast.
+This Accelerator was built using data collected with the [PSOC™ 6 AI Evaluation Kit](https://www.infineon.com/cms/en/product/evaluation-boards/cy8ckit-062s2-ai/). This platform is equipped with PSoC™ 6 MCU and IMU sensors.
 
 The desktop fan is optional; you may want to collect data directly from your machinery instead. However, if you want to replicate the project out-of-the-box with a small desktop fan, any inexpensive product similar to the one shown will be suitable:
 
 ![](Resources/imgs/desktopfan.png)
 
-The PSOC 6 board, equipped with the vibration sensor, was simply taped to the center of the small desktop fan.
+The PSOC™ 6 board, equipped with the vibration sensor, was simply taped to the center of the small desktop fan.
 
 A video of the demo application can be found here:
 
 [![](Resources/imgs/video.png)](https://www.youtube.com/watch?v=tCRPoyPbcgA)
 
-## Collecting and expanding the dataset
+## Adding More Data
 
 To add more data, you need to flash and configure the [Imagimob Streaming Protocol Firmware](https://github.com/Infineon/mtb-example-imagimob-streaming-protocol/blob/master/README.md) on your AI Kit.
 Follow the instructions in the README.md file of the ModusToolbox project to correctly configure and flash the board.
 
 For starting data collection, navigate to the `Tools/IMUDataCollectionProject` folder and double-click the `Main.imunit` file.
-Make sure you have correctly connected the PSOC6 AI Kit to your machine via the USB connector.
+Make sure you have correctly connected the PSOC™ 6 AI Kit to your machine via the USB connector.
 
 In the GraphUX, set the input parameters for the "Serial Capture" block to collect data via the IMU with the following settings:
 
@@ -100,13 +100,13 @@ Simply run the script in your terminal to automatically label all sessions with 
 **Note**: Make sure that the data you label with this system contains only anomalous data.
 The script cannot distinguish anomalies and will simply label the entire length of the sessions with the "anomaly" label.
 
-## Recommended path to production
+## Steps to Production
 
 To bring this project to a production-level system, follow these general steps:
 
 ![](Resources/imgs/productionpath.png)
 
-The prototyping part is fundamental since it will allow you to state the feasibility of your task in a cheap and fast way. If you can get to a model able to reach satisfactory performance with a simple prototype (an example could be the PSOC 6 6 AI Kit simply taped to the machine you want to monitor, using it for collecting a small dataset), then you can be pretty confident that you'll be able to get a good result in production.
+Prototyping is essential because it lets you check feasibility quickly and cheaply. If a simple prototype already reaches acceptable performance (for example, a PSOC™ 6 AI Kit taped to the machine while you collect a small dataset), you can be reasonably confident about a production result.
 
 More in detail, the steps to be followed could look like this:
 
@@ -128,24 +128,28 @@ More in detail, the steps to be followed could look like this:
 
   Import the data you collected in the "Data" tab of the .improj file in DEEPCRAFT™ Studio.
   You are now able to follow the standard DEEPCRAFT™ Studio steps for processing, training, and deploying your Anomaly Detection model.
-  The preprocessor is already set, and some models are already defined for you, which performance is guaranteed to be in real-time on the PSOC6 AI Kit.
+  The preprocessor is already set, and some models are already defined for you; their performance is guaranteed to be real-time on the PSOC™ 6 AI Kit.
 
   **4. Deploy and do a real-time test of your prototype model**
 
-  Last thing to be done in prototyping phase is to deploy the firmware to the device by leveraging the template application already available in ModusToolbox:[MTB Example ML Imagimob MTBML Deploy](https://github.com/Infineon/mtb-example-ml-imagimob-mtbml-deploy) and test the firmware on the machinery. The UART terminal will show you real-time predictions on machine behavior.
+  The last prototyping step is to deploy firmware with the template application in ModusToolbox ([MTB Example ML Imagimob MTBML Deploy](https://github.com/Infineon/mtb-example-ml-imagimob-mtbml-deploy)) and test it on the machinery. The UART terminal shows real-time predictions of machine behavior.
 
   **5. Going to the production board system**
 
-Last step is to move to the actual final production setup. The production system will likely have the MCU placed on a board inside the machine and the IMU sensor in a specific position, not necessarly the same one of the prorotyping phase. If you can go as close as possible to production conditions during prototyping phase, you will be able to deliver the same model also on the production board with little-to-no additional training or data needed. If this is not the case, you might need to do a new data collection step to allow the model to learn the nuances of the final setup. Follow again steps 2, 3 and 4 also for the production setup to reach a functioning application.
+The last step is to move to the final production setup. The production system will likely have the MCU on a board inside the machine and the IMU in a specific position, not necessarily the same as in prototyping. The closer prototyping is to production conditions, the more likely the same model will work on the production board with little or no extra training. Otherwise, collect new data so the model can learn the final setup, and repeat steps 2, 3, and 4.
 
 You may also leverage DEEPCRAFT™ Studio's Transfer Learning features for fine-tuning the prototype model to production data. This could lead to better results and faster go-to-production times, but the usage of Transfer Learning is recommended only to experienced ML users.
 
-**Note:** All subsequent ML system lifetime monitoring procedures must be defined and implemented by you according to you needs, requirements and targets.
+**Note:** All subsequent ML system lifetime monitoring procedures must be defined and implemented by you according to your needs, requirements and targets.
+
+## Attributions & Citations
+
+Vibration data in this project was collected for the accelerator using a PSOC™ 6 AI Evaluation Kit on a desktop fan. Usage is subject to the [DEEPCRAFT™ Studio Terms and Conditions](https://developer.imagimob.com/legal/studio-terms-and-conditions).
 
 ## Getting Started
 
-Please visit [developer.imagimob.com](https://developer.imagimob.com), where you can read about Imagimob Studio and go through step-by-step tutorials to get you quickly started.
+Please visit [developer.imagimob.com](https://developer.imagimob.com), where you can read about DEEPCRAFT™ Studio and go through step-by-step tutorials to get you quickly started.
 
 ## Help & Support
 
-If you need support or if you want to know how to deploy the model on to the device, please submit a ticket on the Infineon [community forum ](https://community.infineon.com/t5/Imagimob/bd-p/Imagimob/page/1) Imagimob Studio page.
+If you need support or if you want to know how to deploy the model onto the device, please submit a ticket on the Infineon [community forum](https://community.infineon.com/t5/Imagimob/bd-p/Imagimob/page/1) DEEPCRAFT™ Studio page.

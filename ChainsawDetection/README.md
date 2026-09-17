@@ -1,12 +1,20 @@
-﻿# Chainsaw Detection
+# Chainsaw Detection
 
 This project is designed to work exclusively with DEEPCRAFT™ Studio. Download it from [here](https://softwaretools.infineon.com/assets/com.ifx.tb.tool.deepcraftstudio)
 
-## Overview
-This is an Accelerator project that classifies if there is an actively cutting chainsaw in the vicinity; chainsaws that are stalling are defined as not cutting. 
-A fully developed model could be used to detect illegal logging or create automatic warning systems. 
+## Overview - Use-Case
 
-## Collection of Data
+This is an Accelerator project that classifies if there is an actively cutting chainsaw in the vicinity; chainsaws that are stalling are defined as not cutting. 
+A fully developed model could be used to detect illegal logging or create automatic warning systems.
+
+## Contents
+
+**`Data`** - Folder where project data is located.
+
+**`Models`** - Folder where trained models, their predictions and generated Edge code are saved.
+
+## Sensor(s) & Data
+
 The majority of data for this model was collected with various microphones and proximities by cutting and stalling chainsaws in a small forest. This data was supplemented by data from freesounds.org in order to add background noise and additional chainsaw sounds.
 Specifically, various forest background noises were added.
 There is limited variety in the types of wood cut due to the collection being in the same forest.
@@ -14,15 +22,18 @@ The data was collected at 16000Hz, and the project contains around 700 minutes o
 After a preliminary evaluation, the model performed very poorly on chainsaw audio played through a speaker, making it harder to demo. As such, additional data was collected by playing chainsaw audio through a variety of speakers to supplement the dataset, after which it significantly improved on sounds played through speakers.
 
 ## Adding More Data
+
 Adding more background noise data can be done online or by collecting microphone data of a suitable environment (i.e., forest, construction site, river). This can then be imported into the Studio project.
-Adding more chainsaw data ought to be done through a thorough collection. Adding variation of different types of chainsaws, different types of trees, and varying the distance from the microphone is strongly recommended, with the distances being most important. 
+Adding more chainsaw data ought to be done through a thorough collection. Adding variation of different types of chainsaws, different types of trees, and varying the distance from the microphone is strongly recommended, with the distances being most important.
 
 ## Steps to Production
-The first step is to identify the use-case, hardware and location of your desired chainsaw detection model and modifying the existing project to account for that. For example, if your microphone is to be encased to protect it from rain, applying data augmentation on the existing data is likely benefitial.
+
+The first step is to identify the use-case, hardware, and location of your desired chainsaw detection model, then modify the existing project to account for that. For example, if your microphone is to be encased to protect it from rain, applying data augmentation on the existing data is likely beneficial.
 Next, collect more data as outlined above with background noise tailored to your use case.
 It is recommended to apply some amount of post processing to reduce false positives. Since chainsaws involved in illegal logging are not active for just a short number of seconds, a models false positive rate can be reduced by for example temporal smoothing.
 
-## Attributions
+## Attributions & Citations
+
 Chainsaw Start Attempts.wav by lonemonk -- https://freesound.org/s/185580/ -- License: Attribution 3.0
 Construction, Jackhammer Excavator, A.wav by InspectorJ -- https://freesound.org/s/400991/ -- License: Attribution 4.0
 atmosphere tokyo construction.wav by IsraGallo -- https://freesound.org/s/513672/ -- License: Attribution 4.0
@@ -38,8 +49,8 @@ Other sounds may also be used as you can see in our master attribution list: htt
 
 ## Getting Started
 
-Please visit [developer.imagimob.com](https://developer.imagimob.com), where you can read about Imagimob Studio and go through step-by-step tutorials to get you quickly started.
+Please visit [developer.imagimob.com](https://developer.imagimob.com), where you can read about DEEPCRAFT™ Studio and go through step-by-step tutorials to get you quickly started.
 
 ## Help & Support
 
-If you need support or if you want to know how to deploy the model on to the device, please submit a ticket on the Infineon [community forum ](https://community.infineon.com/t5/Imagimob/bd-p/Imagimob/page/1) Imagimob Studio page.
+If you need support or if you want to know how to deploy the model onto the device, please submit a ticket on the Infineon [community forum](https://community.infineon.com/t5/Imagimob/bd-p/Imagimob/page/1) DEEPCRAFT™ Studio page.

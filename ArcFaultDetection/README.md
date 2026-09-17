@@ -1,6 +1,6 @@
 # Arc Fault Detection
 
-This project is designed to work exclusively with DEEPCRAFT™ Studio. Download it from [here](https://softwaretools.infineon.com/assets/com.ifx.tb.tool.deepcraftstudio).
+This project is designed to work exclusively with DEEPCRAFT™ Studio. Download it from [here](https://softwaretools.infineon.com/assets/com.ifx.tb.tool.deepcraftstudio)
 
 ## Overview - Use-Case
 
@@ -11,15 +11,15 @@ This project trains a model to detect arc faults from appliance current waveform
 - **Problem:** Real-time detection of series and related arc faults in AC loads from a current waveform
 - **Machine learning method:** CNN binary classification (arc vs. no arc)
 - **Sensor and data:** Oscilloscope with a Hall-effect current probe (rated bandwidth DC–100 kHz); original sampling rate 50 MHz, downsampled to 200 kHz
-- **Relevance:** Rapid CNN-based detection for in-built arc-fault monitoring in residential and appliance electrical products, helping reduce fire risk that conventional over-current protection may miss
+- **Relevance:** Rapid CNN-based detection for built-in arc-fault monitoring in residential and appliance electrical products, helping reduce fire risk that conventional over-current protection may miss
 
 ## Contents
 
-`Data` — Downsampled 200 kHz current recordings and labels, grouped by class (`arc_fault` and `no_arc_fault`)
+**`Data`** — Downsampled 200 kHz current recordings and labels, grouped by class (`arc_fault` and `no_arc_fault`)
 
-`Models` — Folder where the trained DEEPCRAFT model, predictions, and generated Edge code are saved
+**`Models`** — Folder where the trained DEEPCRAFT™ model, predictions, and generated Edge code are saved
 
-`Resources` — [`original_names.csv`](Resources/original_names.csv) and [`new_names.csv`](Resources/new_names.csv) for arc-test name mapping, plus photographs of the arcing setup and load simulator in `Resources/Images/`
+**`Resources`** — [`original_names.csv`](Resources/original_names.csv) and [`new_names.csv`](Resources/new_names.csv) for arc-test name mapping, plus photographs of the arcing setup and load simulator in `Resources/Images/`
 
 ## Sensor(s) & Data
 
@@ -191,7 +191,7 @@ Bring this classifier from a lab accelerator to a product by reducing missed arc
 
 ---
 
-## Attribution & Citation
+## Attributions & Citations
 
 <a name="citations"></a>
 
@@ -204,9 +204,6 @@ Bring this classifier from a lab accelerator to a product by reducing missed arc
 ## Getting Started
 
 Please visit [developer.imagimob.com](https://developer.imagimob.com), where you can read about DEEPCRAFT™ Studio and go through step-by-step tutorials to get you quickly started.
-
-For object-detection data formats, see [Bring your own data for object detection projects](https://developer.imagimob.com/deepcraft-studio/data-preparation/bring-your-data/bring-your-own-data-object-detection).
-
 
 ## Help & Support
 

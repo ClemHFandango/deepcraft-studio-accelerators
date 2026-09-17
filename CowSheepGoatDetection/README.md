@@ -21,7 +21,7 @@ Users can further expand this project by training their own models, importing ne
 ## Features
 
 1. **Real-Time Detection**: The project uses a YOLO-based model to detect and classify cows, sheep, and goats accurately and in real-time.
-2. **Custom Data Integration**: Users can add new data through the data import or using `Object Detection Data Collection Graph UX` template and label their own data for model training.
+2. **Custom Data Integration**: Users can add new data through data import or by using the `Object Detection Data Collection Graph UX` template and label their own data for model training.
 3. **Model Evaluation**: Evaluate trained models by double-clicking the `.tflite` file; it will generate a Graph UX project to run.
 
 ## Contents
@@ -38,7 +38,7 @@ Users can further expand this project by training their own models, importing ne
 2. Download the trained model `.tflite` file from the trained job.
 3. Double-click the `.tflite` file and it will create a Graph UX project.
 4. Run the Graph UX project to evaluate model performance in real time using the selected camera.
-5. Put in front of the camera pictures with cows, sheep, and goats and observe detection from live camera.
+5. Place pictures of cows, sheep, and goats in front of the camera and observe detection from the live camera.
 
 ## Sensor(s) & Data
 
@@ -111,104 +111,103 @@ Some points to highlight:
 - **Keep test data independent:** Make sure the test set is not used in train or validation and reflects scenarios where the model must generalize.
 - **Add negative data:** Include images without cows, sheep, or goats, and images of **other animals**, so the model stays robust against false positives.
 
-## Attribution & Citation
+## Attributions & Citations
 
-@misc{
-cattle-xbqql_dataset,
-title = { Cattle Dataset },
-type = { Open Source Dataset },
-author = { jaaz },
-howpublished = { \url{ https://universe.roboflow.com/jaaz/cattle-xbqql } },
-url = { https://universe.roboflow.com/jaaz/cattle-xbqql },
-journal = { Roboflow Universe },
-publisher = { Roboflow },
-year = { 2025 },
-month = { feb },
-note = { visited on 2026-09-08 },
+```bibtex
+@misc{cattle-xbqql_dataset,
+  title = { Cattle Dataset },
+  type = { Open Source Dataset },
+  author = { jaaz },
+  howpublished = { \url{ https://universe.roboflow.com/jaaz/cattle-xbqql } },
+  url = { https://universe.roboflow.com/jaaz/cattle-xbqql },
+  journal = { Roboflow Universe },
+  publisher = { Roboflow },
+  year = { 2025 },
+  month = { feb },
+  note = { visited on 2026-09-08 },
 }
+```
 
-
-@misc{
-sheep-v2-db0s6_dataset,
-title = { Sheep v2 Dataset },
-type = { Open Source Dataset },
-author = { sheeprecognition-7a7fq },
-howpublished = { \url{ https://universe.roboflow.com/sheeprecognition-7a7fq/sheep-v2-db0s6 } },
-url = { https://universe.roboflow.com/sheeprecognition-7a7fq/sheep-v2-db0s6 },
-journal = { Roboflow Universe },
-publisher = { Roboflow },
-year = { 2025 },
-month = { nov },
-note = { visited on 2026-09-08 },
+```bibtex
+@misc{sheep-v2-db0s6_dataset,
+  title = { Sheep v2 Dataset },
+  type = { Open Source Dataset },
+  author = { sheeprecognition-7a7fq },
+  howpublished = { \url{ https://universe.roboflow.com/sheeprecognition-7a7fq/sheep-v2-db0s6 } },
+  url = { https://universe.roboflow.com/sheeprecognition-7a7fq/sheep-v2-db0s6 },
+  journal = { Roboflow Universe },
+  publisher = { Roboflow },
+  year = { 2025 },
+  month = { nov },
+  note = { visited on 2026-09-08 },
 }
+```
 
-
-@misc{
-goat-5eecg_dataset,
-title = { Goat Dataset },
-type = { Open Source Dataset },
-author = { z Firewood House },
-howpublished = { \url{ https://universe.roboflow.com/z-firewood-house/goat-5eecg } },
-url = { https://universe.roboflow.com/z-firewood-house/goat-5eecg },
-journal = { Roboflow Universe },
-publisher = { Roboflow },
-year = { 2022 },
-month = { aug },
-note = { visited on 2026-09-08 },
+```bibtex
+@misc{goat-5eecg_dataset,
+  title = { Goat Dataset },
+  type = { Open Source Dataset },
+  author = { z Firewood House },
+  howpublished = { \url{ https://universe.roboflow.com/z-firewood-house/goat-5eecg } },
+  url = { https://universe.roboflow.com/z-firewood-house/goat-5eecg },
+  journal = { Roboflow Universe },
+  publisher = { Roboflow },
+  year = { 2022 },
+  month = { aug },
+  note = { visited on 2026-09-08 },
 }
+```
 
-
-@misc{
-goat-sheet-and-cow-detection_dataset,
-title = { Goat, Sheet and cow detection Dataset },
-type = { Open Source Dataset },
-author = { Deep learning in livestock },
-howpublished = { \url{ https://universe.roboflow.com/deep-learning-in-livestock/goat-sheet-and-cow-detection } },
-url = { https://universe.roboflow.com/deep-learning-in-livestock/goat-sheet-and-cow-detection },
-journal = { Roboflow Universe },
-publisher = { Roboflow },
-year = { 2024 },
-month = { feb },
-note = { visited on 2026-09-08 },
+```bibtex
+@misc{goat-sheet-and-cow-detection_dataset,
+  title = { Goat, Sheet and cow detection Dataset },
+  type = { Open Source Dataset },
+  author = { Deep learning in livestock },
+  howpublished = { \url{ https://universe.roboflow.com/deep-learning-in-livestock/goat-sheet-and-cow-detection } },
+  url = { https://universe.roboflow.com/deep-learning-in-livestock/goat-sheet-and-cow-detection },
+  journal = { Roboflow Universe },
+  publisher = { Roboflow },
+  year = { 2024 },
+  month = { feb },
+  note = { visited on 2026-09-08 },
 }
+```
 
-
-@misc{
-goat-olvnd_dataset,
-title = { Goat Dataset },
-type = { Open Source Dataset },
-author = { karthik },
-howpublished = { \url{ https://universe.roboflow.com/karthik-a3uja/goat-olvnd } },
-url = { https://universe.roboflow.com/karthik-a3uja/goat-olvnd },
-journal = { Roboflow Universe },
-publisher = { Roboflow },
-year = { 2023 },
-month = { jul },
-note = { visited on 2026-09-08 },
+```bibtex
+@misc{goat-olvnd_dataset,
+  title = { Goat Dataset },
+  type = { Open Source Dataset },
+  author = { karthik },
+  howpublished = { \url{ https://universe.roboflow.com/karthik-a3uja/goat-olvnd } },
+  url = { https://universe.roboflow.com/karthik-a3uja/goat-olvnd },
+  journal = { Roboflow Universe },
+  publisher = { Roboflow },
+  year = { 2023 },
+  month = { jul },
+  note = { visited on 2026-09-08 },
 }
+```
 
-
-@misc{
-sheep-svfcb_dataset,
-title = { Sheep Dataset },
-type = { Open Source Dataset },
-author = { Benedict Project },
-howpublished = { \url{ https://universe.roboflow.com/benedict-project/sheep-svfcb } },
-url = { https://universe.roboflow.com/benedict-project/sheep-svfcb },
-journal = { Roboflow Universe },
-publisher = { Roboflow },
-year = { 2025 },
-month = { feb },
-note = { visited on 2026-09-08 },
+```bibtex
+@misc{sheep-svfcb_dataset,
+  title = { Sheep Dataset },
+  type = { Open Source Dataset },
+  author = { Benedict Project },
+  howpublished = { \url{ https://universe.roboflow.com/benedict-project/sheep-svfcb } },
+  url = { https://universe.roboflow.com/benedict-project/sheep-svfcb },
+  journal = { Roboflow Universe },
+  publisher = { Roboflow },
+  year = { 2025 },
+  month = { feb },
+  note = { visited on 2026-09-08 },
 }
-
+```
 
 ## Getting Started
 
 Please visit [developer.imagimob.com](https://developer.imagimob.com), where you can read about DEEPCRAFT™ Studio and go through step-by-step tutorials to get you quickly started.
 
 For object-detection data formats, see [Bring your own data for object detection projects](https://developer.imagimob.com/deepcraft-studio/data-preparation/bring-your-data/bring-your-own-data-object-detection).
-
 
 ## Help & Support
 

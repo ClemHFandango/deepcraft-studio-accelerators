@@ -1,4 +1,4 @@
-﻿# Capsense Gesture Detection
+# Capsense Gesture Detection
 
 This project is designed to work exclusively with DEEPCRAFT™ Studio. Download it from [here](https://softwaretools.infineon.com/assets/com.ifx.tb.tool.deepcraftstudio)
 
@@ -12,7 +12,7 @@ A supervised learning model is trained on touch-based sensor data to accurately 
 + Swipe Right
 
 This project allows for a seamless and efficient interface, particularly suited for embedded systems and smart devices.
-CAPSENSE provides a compact and reliable method for gesture recognition, making it ideal for devices where traditional mechanical buttons are impractical or undesirable.
+CAPSENSE™ provides a compact and reliable method for gesture recognition, making it ideal for devices where traditional mechanical buttons are impractical or undesirable.
 This technology enhances user experience across a range of modern products, including:
 + Smart home control panels
 + Wearable devices
@@ -22,18 +22,18 @@ By replacing physical buttons with intuitive gesture-based controls, this approa
 
 ## Contents
 
-`Data` 	- Folder to store the Up, Down, Left and Right gesture datasets.
+**`Data`** 	- Folder to store the Up, Down, Left and Right gesture datasets.
 
-`Models` - Folder where trained models, their predictions and generated Edge code are saved. 
+**`Models`** - Folder where trained models, their predictions and generated Edge code are saved. 
 
-`Resources` - Folder where all extra resources/files can be found.
+**`Resources`** - Folder where all extra resources/files can be found.
 
-`Tools`	- Folder containing a python script used for downsampling data.
+**`Tools`**	- Folder containing a python script used for downsampling data.
 
-## Sensor & Data
+## Sensor(s) & Data
 
-This project uses data collected with a CAPSENSE-based custom board which consists of 5 slider segments connected to a PSOC4 board.
-The CAPSENSE sensor is designed using multiple capacitive electrodes arranged to detect directional gestures such as up-swipe, down-swipe, left-swipe and right-swipe. Each electrode senses changes in self-capacitance when a finger approaches or touches the overlay surface. The overlay, typically made of plastic or glass, acts as a dielectric layer and influences the sensor’s sensitivity based on its thickness and material properties. The capacitance is modeled using the parallel plate capacitor equation:
+This project uses data collected with a CAPSENSE™-based custom board which consists of 5 slider segments connected to a PSOC™4 board.
+The CAPSENSE™ sensor is designed using multiple capacitive electrodes arranged to detect directional gestures such as up-swipe, down-swipe, left-swipe and right-swipe. Each electrode senses changes in self-capacitance when a finger approaches or touches the overlay surface. The overlay, typically made of plastic or glass, acts as a dielectric layer and influences the sensor’s sensitivity based on its thickness and material properties. The capacitance is modeled using the parallel plate capacitor equation:
 
 C = ( epsilon_0 * epsilon_r * A) / D
 
@@ -48,9 +48,8 @@ epsilon_r is the dielectric constant of the overlay,
 
 The image above shows the PCB layout of the custom capacitive sensor board designed for the project. The P4_iMob_FabFiles located in the Resources folder contain all necessary fabrication assets and can be provided to a PCB manufacturer to build the custom board. On the left side of the board, there is a vertical
 row of six pins, labeled with signal identifiers such as GND and P1. Each pin on the left side of the PCB corresponds to a specific gesture zone. 
-When a finger touches or approaches the area above a pin’s associated electrode, the CAPSENSE system detects a change in capacitance and it is send to the model which then interprets it as a specific directional gesture. 
+When a finger touches or approaches the area above a pin’s associated electrode, the CAPSENSE™ system detects a change in capacitance and it is sent to the model, which then interprets it as a specific directional gesture. 
 These pins serve as connection points to the main controller or evaluation kit.
-
 
 
 | **Pin Label(P1)** | **Gesture Function**|
@@ -66,16 +65,16 @@ These pins serve as connection points to the main controller or evaluation kit.
 
 ## Adding More Data
 
-The project utilizes PSoC4000T EVK (CY8CPROTO-040T) plus custom sensor board.
+The project utilizes PSoC™4000T EVK (CY8CPROTO-040T) plus custom sensor board.
 To collect more data ensure that boards are connected as shown in the image below. 
 
 ![Connection Diagram 2](./Resources/Images/capsenseboard.PNG)
 
-To start the project, create an example CAPSENSE project by selecting the peripherals as ¨UART Transmit and Receive¨ in ModusToolbox IDE. Set up data transmission over UART to a PC running the Imagimob Capture Server software.
+To start the project, create an example CAPSENSE™ project by selecting the peripherals as "UART Transmit and Receive" in ModusToolbox IDE. Set up data transmission over UART to a PC running the Imagimob Capture Server software.
 Configure the UART, RX, and TX by referring to the code snippet located at Resources > uart_configuration_code_snippet and collect data using the [Capture Server](https://bitbucket.org/imagimob/captureserver/src/master/).
 The collected data in this project has been downsampled using the provided script to optimize model efficiency and reduce computational overhead.
 
-To tune the CAPSENSE custom board, get the sensor parasitic capacitance and use [ModusToolbox™ CAPSENSE™ Tuner](https://documentation.infineon.com/modustoolbox/docs/pdn1712080509469) for tuning.
+To tune the CAPSENSE™ custom board, get the sensor parasitic capacitance and use [ModusToolbox™ CAPSENSE™ Tuner](https://documentation.infineon.com/modustoolbox/docs/pdn1712080509469) for tuning.
 
 Shown below is the recording window, where each waveform color—violet, green, yellow, blue, and red corresponds to the left, middle, up, right, and down slider segments on the custom board. The displayed data is labeled as ‘up’.
 
@@ -83,6 +82,7 @@ Shown below is the recording window, where each waveform color—violet, green, 
 
 
 ## Steps to Production
+
 To bring a gesture detection model to production involves collecting gesture samples from a wide range of users and environments. Diversity in data ensures that the model learns to generalize across real-world conditions and reduces the risk of overfitting to a narrow set of inputs. 
 
 Gesture recognition performance can be affected by whether the device is handheld or mounted, the material and shape of the surface, and the presence of external disturbances. Environmental influences such as humidity and long-term wear on the sensor can also alter signal characteristics. To build a robust and reliable model, it is essential to capture data across these diverse conditions and incorporate them into the training pipeline.
@@ -92,3 +92,15 @@ It is crucial to properly split the dataset into training, validation, and test 
 To further enhance model reliability, negative samples should be included in the dataset. These are examples where no gesture is present, or where random hand movements occur. Including such data helps the model learn to distinguish between intentional gestures and irrelevant signals, reducing false positives and improving robustness in noisy or unpredictable environments.
 
 The model should be tested in real-world conditions to identify edge cases (eg: using wet or gloved hands, gestures executed too quickly or too slowly), monitor performance and gather user feedback. A feedback loop could be established to collect new data post-deployment, enabling periodic retraining and updates. This continuous learning process ensures that the gesture detection model remains accurate, adaptive, and production-ready over time.
+
+## Attributions & Citations
+
+Unless noted otherwise, data included in this project was collected for this accelerator. Usage is subject to the [DEEPCRAFT™ Studio Terms and Conditions](https://developer.imagimob.com/legal/studio-terms-and-conditions).
+
+## Getting Started
+
+Please visit [developer.imagimob.com](https://developer.imagimob.com), where you can read about DEEPCRAFT™ Studio and go through step-by-step tutorials to get you quickly started.
+
+## Help & Support
+
+If you need support or if you want to know how to deploy the model onto the device, please submit a ticket on the Infineon [community forum](https://community.infineon.com/t5/Imagimob/bd-p/Imagimob/page/1) DEEPCRAFT™ Studio page.

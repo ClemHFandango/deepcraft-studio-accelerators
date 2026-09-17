@@ -21,7 +21,7 @@ Users can further expand this project by training their own models, importing ne
 ## Features
 
 1. **Real-Time Detection**: The project uses a YOLO-based model to detect and classify black measles, black rot, leaf blight, and healthy grapevine leaves accurately and in real-time.
-2. **Custom Data Integration**: Users can add new data through the data import or using `Object Detection Data Collection Graph UX` template and label their own data for model training.
+2. **Custom Data Integration**: Users can add new data through data import or by using the `Object Detection Data Collection Graph UX` template and label their own data for model training.
 3. **Model Evaluation**: Evaluate trained models by double-clicking the `.tflite` file; it will generate a Graph UX project to run.
 
 ## Contents
@@ -43,7 +43,7 @@ Users can further expand this project by training their own models, importing ne
 2. Download the trained model `.tflite` file from the trained job.
 3. Double-click the `.tflite` file and it will create a Graph UX project.
 4. Run the Graph UX project to evaluate model performance in real time using the selected camera.
-5. Put in front of the camera pictures with grapevine leaves (healthy, black measles, black rot, and leaf blight) and observe detection from live camera.
+5. Place pictures of grapevine leaves (healthy, black measles, black rot, and leaf blight) in front of the camera and observe detection from the live camera.
 
 ## Sensor(s) & Data
 
@@ -71,7 +71,7 @@ You can add more data to the project following the steps below to improve detect
 1. Use `Object Detection Data Collection Graph UX` template to collect and label new data.
 2. Import data to your project and retrain to get an updated model.
 
-You can also import data from any other source (for example, your own images or another dataset) as long as it follows the DEEPCRAFT Studio object-detection format: images with matching `LabelXml` annotations using normalized center coordinates (`X`, `Y`, `Width`, `Height`). See [Bring your own data for object detection projects](https://developer.imagimob.com/deepcraft-studio/data-preparation/bring-your-data/bring-your-own-data-object-detection).
+You can also import data from any other source (for example, your own images or another dataset) as long as it follows the DEEPCRAFT™ Studio object-detection format: images with matching `LabelXml` annotations using normalized center coordinates (`X`, `Y`, `Width`, `Height`). See [Bring your own data for object detection projects](https://developer.imagimob.com/deepcraft-studio/data-preparation/bring-your-data/bring-your-own-data-object-detection).
 
 ## Steps to Production
 
@@ -86,75 +86,71 @@ The recommended path to production for this project includes the following steps
 
 Some points to highlight:
 
-- **Increase data variability:** Collect data from different environments, cameras, lighting conditions, distances, and backgrounds. Use DEEPCRAFT Studio augmentation settings (flip, scale, brightness, exposure) to increase image variability for vision models.
+- **Increase data variability:** Collect data from different environments, cameras, lighting conditions, distances, and backgrounds. Use DEEPCRAFT™ Studio augmentation settings (flip, scale, brightness, exposure) to increase image variability for vision models.
 - **Keep test data independent:** Make sure the test set is not used in train or validation and reflects scenarios where the model must generalize.
 - **Add negative data:** Include images without the target objects and common look-alikes to improve robustness against false positives.
 
-## Attribution & Citation
+## Attributions & Citations
 
 Please cite the datasets used in this project.
 
 ```bibtex
-@misc{
-grapevine-leaves_dataset,
-title = { Grapevine Leaves Dataset },
-type = { Open Source Dataset },
-author = { Grape },
-howpublished = { \url{ https://universe.roboflow.com/grape-rpakq/grapevine-leaves } },
-url = { https://universe.roboflow.com/grape-rpakq/grapevine-leaves },
-journal = { Roboflow Universe },
-publisher = { Roboflow },
-year = { 2024 },
-month = { aug },
-note = { visited on 2026-09-08 },
+@misc{grapevine-leaves_dataset,
+  title = { Grapevine Leaves Dataset },
+  type = { Open Source Dataset },
+  author = { Grape },
+  howpublished = { \url{ https://universe.roboflow.com/grape-rpakq/grapevine-leaves } },
+  url = { https://universe.roboflow.com/grape-rpakq/grapevine-leaves },
+  journal = { Roboflow Universe },
+  publisher = { Roboflow },
+  year = { 2024 },
+  month = { aug },
+  note = { visited on 2026-09-08 },
 }
 ```
 
 ```bibtex
-@misc{
-grape-leaf-disease-detection-gzafz_dataset,
-title = { Grape Leaf Disease Detection Dataset },
-type = { Open Source Dataset },
-author = { laluna },
-howpublished = { \url{ https://universe.roboflow.com/laluna/grape-leaf-disease-detection-gzafz } },
-url = { https://universe.roboflow.com/laluna/grape-leaf-disease-detection-gzafz },
-journal = { Roboflow Universe },
-publisher = { Roboflow },
-year = { 2026 },
-month = { may },
-note = { visited on 2026-09-08 },
+@misc{grape-leaf-disease-detection-gzafz_dataset,
+  title = { Grape Leaf Disease Detection Dataset },
+  type = { Open Source Dataset },
+  author = { laluna },
+  howpublished = { \url{ https://universe.roboflow.com/laluna/grape-leaf-disease-detection-gzafz } },
+  url = { https://universe.roboflow.com/laluna/grape-leaf-disease-detection-gzafz },
+  journal = { Roboflow Universe },
+  publisher = { Roboflow },
+  year = { 2026 },
+  month = { may },
+  note = { visited on 2026-09-08 },
 }
 ```
 
 ```bibtex
-@misc{
-grape-leaf-diseases-tln5a_dataset,
-title = { Grape Leaf Diseases Dataset },
-type = { Open Source Dataset },
-author = { skimok77 },
-howpublished = { \url{ https://universe.roboflow.com/skimok77/grape-leaf-diseases-tln5a } },
-url = { https://universe.roboflow.com/skimok77/grape-leaf-diseases-tln5a },
-journal = { Roboflow Universe },
-publisher = { Roboflow },
-year = { 2025 },
-month = { jul },
-note = { visited on 2026-09-08 },
+@misc{grape-leaf-diseases-tln5a_dataset,
+  title = { Grape Leaf Diseases Dataset },
+  type = { Open Source Dataset },
+  author = { skimok77 },
+  howpublished = { \url{ https://universe.roboflow.com/skimok77/grape-leaf-diseases-tln5a } },
+  url = { https://universe.roboflow.com/skimok77/grape-leaf-diseases-tln5a },
+  journal = { Roboflow Universe },
+  publisher = { Roboflow },
+  year = { 2025 },
+  month = { jul },
+  note = { visited on 2026-09-08 },
 }
 ```
 
 ```bibtex
-@misc{
-grape-leaf-diseases-hqlrl_dataset,
-title = { grape-leaf-diseases Dataset },
-type = { Open Source Dataset },
-author = { trial1 },
-howpublished = { \url{ https://universe.roboflow.com/trial1-53ber/grape-leaf-diseases-hqlrl } },
-url = { https://universe.roboflow.com/trial1-53ber/grape-leaf-diseases-hqlrl },
-journal = { Roboflow Universe },
-publisher = { Roboflow },
-year = { 2025 },
-month = { may },
-note = { visited on 2026-09-08 },
+@misc{grape-leaf-diseases-hqlrl_dataset,
+  title = { grape-leaf-diseases Dataset },
+  type = { Open Source Dataset },
+  author = { trial1 },
+  howpublished = { \url{ https://universe.roboflow.com/trial1-53ber/grape-leaf-diseases-hqlrl } },
+  url = { https://universe.roboflow.com/trial1-53ber/grape-leaf-diseases-hqlrl },
+  journal = { Roboflow Universe },
+  publisher = { Roboflow },
+  year = { 2025 },
+  month = { may },
+  note = { visited on 2026-09-08 },
 }
 ```
 
@@ -163,5 +159,7 @@ note = { visited on 2026-09-08 },
 Please visit [developer.imagimob.com](https://developer.imagimob.com), where you can read about DEEPCRAFT™ Studio and go through step-by-step tutorials to get you quickly started.
 
 For object-detection data formats, see [Bring your own data for object detection projects](https://developer.imagimob.com/deepcraft-studio/data-preparation/bring-your-data/bring-your-own-data-object-detection).
+
+## Help & Support
 
 If you need support or if you want to know how to deploy the model onto the device, please submit a ticket on the Infineon [community forum](https://community.infineon.com/t5/Imagimob/bd-p/Imagimob/page/1) DEEPCRAFT™ Studio page.

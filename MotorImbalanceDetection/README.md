@@ -1,4 +1,4 @@
-﻿# Motor Imbalance Detection
+# Motor Imbalance Detection
 
 This project is designed to work exclusively with DEEPCRAFT™ Studio. Download it from [here](https://softwaretools.infineon.com/assets/com.ifx.tb.tool.deepcraftstudio)
 
@@ -6,7 +6,7 @@ This project is designed to work exclusively with DEEPCRAFT™ Studio. Download 
 
 This project allows you to develop an AI model capable of detecting imbalances in the motor load while the motor is operating.
 
-This project applies supervised Learning where the system categorizes collected data into three distinct classes: 
+This project applies supervised learning where the system categorizes collected data into three distinct classes: 
 + Balanced - A balanced motor state means the rotor is evenly aligned around its axis, resulting in minimal vibration and stable performance.
 + Unbalanced - An unbalanced motor experiences uneven forces or electrical inputs which leads to instability in its operation.
 + Open loop - The system sends commands to the motor without verifying its actual response as there is no feedback loop from the motor to 
@@ -16,29 +16,29 @@ The model helps to improve energy efficiency by detecting motor imbalance. Imbal
 which reduces operational efficiency. By identifying these issues promptly, the model also contributes to extending the motor’s lifespan 
 and supports quality control in manufacturing environments.
 
-The model is suitable for real-time, low powered embedded applications such as:
-- Industrial machines (conveyers, pumps, compressors)
-- Automotive systems (Electrical Vehicle motors, actuators)
+The model is suitable for real-time, low-power embedded applications such as:
+- Industrial machines (conveyors, pumps, compressors)
+- Automotive systems (electric vehicle motors, actuators)
 - Consumer applications (washing machines, fans, power tools)
 - Robotics and automation
 
 
 ## Contents
 
-`Data` 	- Folder to store the current and speed signals of the motor.
+**`Data`** 	- Folder to store the current and speed signals of the motor.
 
-`Models` - Folder where trained models, their predictions and generated Edge code are saved. 
+**`Models`** - Folder where trained models, their predictions and generated Edge code are saved. 
 
-`Resources` - Folder where all extra resources/files can be found.
+**`Resources`** - Folder where all extra resources/files can be found.
 
-`Tools`	- Folder containing the GraphUX unit to collect data and evaluate the model in Studio, along with the corresponding .hex file.
+**`Tools`**	- Folder containing the GraphUX unit to collect data and evaluate the model in Studio, along with the corresponding .hex file.
 
-`PreprocessorTrack` - Folder containing preprocessed data tracks (i.e. the output of the preprocessor).
+**`PreprocessorTrack`** - Folder containing preprocessed data tracks (i.e. the output of the preprocessor).
 
-## Sensors and Data
+## Sensor(s) & Data
 
-This project utilizes the PSOC C3 Motor Control Kit (KIT_PSC3M5_MC1) for data collection. The kit includes the following components: 
-- PSOC C3 Drive Card
+This project utilizes the PSOC™ C3 Motor Control Kit (KIT_PSC3M5_MC1) for data collection. The kit includes the following components: 
+- PSOC™ C3 Drive Card
 - Nanotec DB42M03 electric Motor
 
 To complete the setup, the following additional hardware is required (not included in the Motor Control Kit):
@@ -49,7 +49,7 @@ To complete the setup, the following additional hardware is required (not includ
 - CP2102 USB-UART converter for data collection and streaming
 
 An Analog-to-digital converter (ADC) is used for data acquisition, with a sampling frequency set to 15kHz. The sampled data consist of 3 x 12-bit
-raw integer values which represent the quantized phase currents of motor. The motor control algorithm calculates Iq (quadrature-axis current) and 
+raw integer values which represent the quantized phase currents of the motor. The motor control algorithm calculates Iq (quadrature-axis current) and 
 speed (RPM). Frequency-domain features are extracted by applying FFT to Iq and speed, which are then used as input to the ML model for imbalance
 classification.
 
@@ -60,9 +60,9 @@ oscillations in motor speed.
 
 ## Adding More Data
 
-To prepare the PSOC C3 Motor Control Kit (KIT_PSC3M5_MC1) for data collection:
+To prepare the PSOC™ C3 Motor Control Kit (KIT_PSC3M5_MC1) for data collection:
 - Ensure the motor is properly connected to the power board.
-- Connect the PSOC C3 drive card to the adapter board, the power board, and the CP2102 USB-UART converter as illustrated in the image below.
+- Connect the PSOC™ C3 drive card to the adapter board, the power board, and the CP2102 USB-UART converter as illustrated in the image below.
 
 
 ![Connection Diagram 1](./Resources/image1.png)
@@ -80,7 +80,7 @@ connected to B19 of the J11 pin group. The connections are shown in the figure b
 ![Connection Diagram 3](./Resources/image3.png)
 
 
-Flash the code using the Modus Toolbox Programmer on to the PSOC C3 drive card. The .hex file can be accessed by navigating to 
+Flash the code using the ModusToolbox Programmer onto the PSOC™ C3 drive card. The .hex file can be accessed by navigating to 
 Tools > Data Collection. The main steps for flashing the .hex file are similar to those described at this link
 https://developer.imagimob.com/getting-started/infineon-ai-evaluation-kit#streaming-firmware-for-psoc-6-ai-evaluation-kit
 
@@ -111,6 +111,18 @@ Bringing a motor imbalance detection model into production requires careful cons
 
 Imbalance detection can be affected by whether the motor is mounted horizontally or vertically, the type of mechanical load it drives and the presence of external vibrations. Environmental influences like temperature shifts, humidity and long-term wear can also alter signal patterns. Capturing data across these varied conditions and incorporating it into the training process is essential for building a robust and reliable model.
 
-It is equally important to include negative samples in data from normal operation, startup transients(eg:sudden spikes or dips in current or voltage, rapid changes in vibration or torque etc) and other non-imbalance events to help the model distinguish true imbalance from unrelated noise. If the model is designed to detect imbalance specifically also gather data from other fault types such as misalignment or bearing wear to improve its precision.
+It is equally important to include negative samples from normal operation, startup transients (e.g. sudden spikes or dips in current or voltage, rapid changes in vibration or torque, etc.) and other non-imbalance events to help the model distinguish true imbalance from unrelated noise. If the model is designed to detect imbalance specifically, also gather data from other fault types such as misalignment or bearing wear to improve its precision.
 
-To ensure the model generalizes well test it under both typical operating conditions and edge cases (eg:extreme speeds or loads, sudden changes in directions etc). Begin with your test dataset but also run live sessions to evaluate how the model performs in real-world scenarios.
+To ensure the model generalizes well, test it under both typical operating conditions and edge cases (e.g. extreme speeds or loads, sudden changes in direction, etc.). Begin with your test dataset but also run live sessions to evaluate how the model performs in real-world scenarios.
+
+## Attributions & Citations
+
+Unless noted otherwise, data included in this project was collected for this accelerator. Usage is subject to the [DEEPCRAFT™ Studio Terms and Conditions](https://developer.imagimob.com/legal/studio-terms-and-conditions).
+
+## Getting Started
+
+Please visit [developer.imagimob.com](https://developer.imagimob.com), where you can read about DEEPCRAFT™ Studio and go through step-by-step tutorials to get you quickly started.
+
+## Help & Support
+
+If you need support or if you want to know how to deploy the model onto the device, please submit a ticket on the Infineon [community forum](https://community.infineon.com/t5/Imagimob/bd-p/Imagimob/page/1) DEEPCRAFT™ Studio page.

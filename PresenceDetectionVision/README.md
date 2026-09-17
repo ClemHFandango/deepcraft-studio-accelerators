@@ -1,4 +1,4 @@
-﻿# Presence Detection Project
+# Presence Detection Project
 
 This project is designed to work exclusively with DEEPCRAFT™ Studio. Download it from [here](https://softwaretools.infineon.com/assets/com.ifx.tb.tool.deepcraftstudio)
 
@@ -6,7 +6,7 @@ This project is designed to work exclusively with DEEPCRAFT™ Studio. Download 
 
 The **Presence Detection Project** aims to automatically detect and localize humans in images or video frames. The solution focuses on a lightweight model that can run efficiently on edge devices while maintaining acceptable accuracy and latency.
 
-YOLOv5n (nano) is fine tuned using transfer learning method on a dataset from different scenarios. The model outputs bounding boxes and confidence scores for detected persons. Training included standard augmentation (flips, translation, scale, mosaic). YOLOv5n is chosen for its strong speed/accuracy balance and small footprint, enabling deployment on embeded devices. The primary sensor is a standard RGB camera (USB, MIPI-CSI, smartphone, or industrial).
+YOLOv5n (nano) is fine-tuned with transfer learning on a dataset from different scenarios. The model outputs bounding boxes and confidence scores for detected persons. Training included standard augmentation (flips, translation, scale, mosaic). YOLOv5n is chosen for its strong speed/accuracy balance and small footprint, enabling deployment on embedded devices. The primary sensor is a standard RGB camera (USB, MIPI-CSI, smartphone, or industrial).
 
 This capability is relevant to many applications: 
 - Safety and compliance monitoring in industrial areas
@@ -20,16 +20,21 @@ Users can further expand this project by training their own models, importing ne
 
 **`Data`** 	- Contains data taken from Roboflow with human class images: [Human datasets](https://universe.roboflow.com/leo-ueno/people-detection-o4rdr/dataset/1). This dataset used images and/or annotations from Universe projects with CC BY 4.0 license.
 
-**`Models`** - Folder where trained trained yolo5n, model predictions and generated Edge code are saved. 
+**`Models`** - Folder where the trained YOLOv5n model, predictions, and generated Edge code are saved.
 
 
 ## Steps to get started: Model Training and Evaluation
+
   
    1. Train the YOLO-based model using the provided dataset or custom data.
-   2. Download the trained model `.tflite` file from trained job. 
-   3. Double click the `.tflite` file and it will create a Graph Ux project.
-   4. Run the Graph UX project to evaluate model performance in real time using selected camera.
-   5. Make sure to have human presence in front of the camera and observe detection from live camera.
+   2. Download the trained model `.tflite` file from the trained job. 
+   3. Double-click the `.tflite` file and it will create a Graph UX project.
+   4. Run the Graph UX project to evaluate model performance in real time using the selected camera.
+   5. Make sure a person is in front of the camera and observe detection from the live camera.
+
+## Sensor(s) & Data
+
+The primary sensor is a standard RGB camera (USB, MIPI-CSI, smartphone, or industrial). Image data is stored as DEEPCRAFT™ Studio object-detection sessions with person bounding boxes.
 
 ## Adding More Data
 
@@ -37,7 +42,6 @@ You can add more data to the project to improve the existing human presence dete
 Steps for adding own collected data: 
  1. Use `Object Detection Data Collection Graph UX` template to collect and label new data.
  2. Import data to your project and retrain to get an updated model.
- 
 
 ## Steps to Production
 
@@ -47,17 +51,27 @@ The recommended path to production for this project includes the following steps
 - Try different augmentation settings to increase the variability of the dataset.
 - Try different advanced settings such as optimizer,  iou threshold or confidence threshold to make model more or less sensitive.
 
-## Attribution & Citation
-@misc{
-people-detection-o4rdr_dataset,
-title = { People Detection Dataset },
-type = { Open Source Dataset },
-author = { Leo Ueno },
-howpublished = { \url{ https://universe.roboflow.com/leo-ueno/people-detection-o4rdr } },
-url = { https://universe.roboflow.com/leo-ueno/people-detection-o4rdr },
-journal = { Roboflow Universe },
-publisher = { Roboflow },
-year = { 2025 },
-month = { oct },
-note = { visited on 2025-10-09 },
+## Attributions & Citations
+
+```bibtex
+@misc{people-detection-o4rdr_dataset,
+  title = { People Detection Dataset },
+  type = { Open Source Dataset },
+  author = { Leo Ueno },
+  howpublished = { \url{ https://universe.roboflow.com/leo-ueno/people-detection-o4rdr } },
+  url = { https://universe.roboflow.com/leo-ueno/people-detection-o4rdr },
+  journal = { Roboflow Universe },
+  publisher = { Roboflow },
+  year = { 2025 },
+  month = { oct },
+  note = { visited on 2025-10-09 },
 }
+```
+
+## Getting Started
+
+Please visit [developer.imagimob.com](https://developer.imagimob.com), where you can read about DEEPCRAFT™ Studio and go through step-by-step tutorials to get you quickly started.
+
+## Help & Support
+
+If you need support or if you want to know how to deploy the model onto the device, please submit a ticket on the Infineon [community forum](https://community.infineon.com/t5/Imagimob/bd-p/Imagimob/page/1) DEEPCRAFT™ Studio page.

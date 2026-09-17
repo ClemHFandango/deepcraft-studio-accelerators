@@ -1,5 +1,7 @@
 # Fall Detection (Wrist-worn)
 
+This project is designed to work exclusively with DEEPCRAFT™ Studio. Download it from [here](https://softwaretools.infineon.com/assets/com.ifx.tb.tool.deepcraftstudio)
+
 ## Overview - Use-Case
 
 This project allows you to build models that detect falls in less active individuals, such as elderly people, using a 3-axis accelerometer worn on the wrist. It uses Classification to distinguish a fall from everyday activity, and pairs the model with a stillness-based post-processing gate that confirms a fall after a period of inactivity, reducing false positives.
@@ -8,13 +10,13 @@ Reliable wrist-worn fall detection is relevant to wearables, safety monitoring, 
 
 ## Contents
 
-`Data` - Folder where data is located. Contains wrist-worn accelerometer recordings organized by anonymized source, batch, class (Fall / NonFall), and session.
+**`Data`** - Folder where data is located. Contains wrist-worn accelerometer recordings organized by anonymized source, batch, class (Fall / NonFall), and session.
 
-`Models` - Folder where trained models, their predictions and generated Edge code are saved.
+**`Models`** - Folder where trained models, their predictions and generated Edge code are saved.
 
-`Tools` - Folder containing the `CodeGenGraphUX` Graph UX project used for code generation, including feature extraction and the stillness-based post-processing gate. The custom units (`Tools/CodeGenGraphUX/Units`) live inside this Graph UX project rather than a top-level `Units` folder, since Graph UX resolves unit paths relative to its own project.
+**`Tools`** - Folder containing the `CodeGenGraphUX` Graph UX project used for code generation, including feature extraction and the stillness-based post-processing gate. The custom units (`Tools/CodeGenGraphUX/Units`) live inside this Graph UX project rather than a top-level `Units` folder, since Graph UX resolves unit paths relative to its own project.
 
-## Sensor configuration
+## Sensor(s) & Data
 
 The accelerometer needs to be set up to collect data at 50 Hz, using a +/- 8g scale with 12- or 16-bit resolution. Input values must be expressed in g.
 
@@ -45,8 +47,8 @@ An advanced preprocessing layer called **Master Feature** is available as an alt
 Using Master Feature can improve model performance. To switch to Master Feature layer:
 
 1. Double-click the project file (`.improj`). The project file opens in a new tab.
-2. Click **Preprocessor** tab on the left pane.
-3. Click **+** (Add New Layer) to add custom layer, Master Feature.
+2. Click the **Preprocessor** tab on the left pane.
+3. Click **+** (Add New Layer) to add the custom layer, Master Feature.
 4. Click **-** (Delete Layer) to delete the Low Pass Filter layer.
 
 ## CodeGenGraphUX
@@ -74,10 +76,14 @@ To take this project to production you should do the following:
 - Make sure the Test set contains data not used in Train and Validation, so you can verify the model generalizes to different wearers and scenarios.
 - Validate sensor orientation against the coordinate system used during data collection; incorrect axis orientation can reduce model performance.
 
+## Attributions & Citations
+
+Wrist-worn accelerometer recordings of simulated falls and everyday activities were collected by Imagimob AB and project partners. Dataset identities are anonymized. Data is licensed under the [DEEPCRAFT™ Studio Terms and Conditions](https://developer.imagimob.com/legal/studio-terms-and-conditions).
+
 ## Getting Started
 
-Please visit [developer.imagimob.com](https://developer.imagimob.com), where you can read about Imagimob Studio and go through step-by-step tutorials to get you quickly started.
+Please visit [developer.imagimob.com](https://developer.imagimob.com), where you can read about DEEPCRAFT™ Studio and go through step-by-step tutorials to get you quickly started.
 
 ## Help & Support
 
-If you need support or if you want to know how to deploy the model on to the device, please submit a ticket on the Infineon [community forum ](https://community.infineon.com/t5/Imagimob/bd-p/Imagimob/page/1) Imagimob Studio page.
+If you need support or if you want to know how to deploy the model onto the device, please submit a ticket on the Infineon [community forum](https://community.infineon.com/t5/Imagimob/bd-p/Imagimob/page/1) DEEPCRAFT™ Studio page.

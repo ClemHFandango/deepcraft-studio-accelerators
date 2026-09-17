@@ -6,15 +6,15 @@ This project is designed to work exclusively with DEEPCRAFT™ Studio. Download 
 
 The **Emergency Vehicle Detection** project detects ambulances, fire trucks, and police cars from live video input.
 
-- **Machine learning method:** YOLO-based object detection trained in DEEPCRAFT Studio
+- **Machine learning method:** YOLO-based object detection trained in DEEPCRAFT™ Studio
 - **Sensor and data type:** RGB camera or live video input (image data)
 - **Why it matters:** Detecting emergency vehicles in real time lets autonomous systems and smart-city infrastructure yield right-of-way, clear intersections, and prioritize ambulances, fire trucks, and police cars, improving road safety and emergency response times.
 
 ## Features
 
 1. **Real-Time Detection**: The project uses a YOLO-based model to detect and classify ambulances, fire trucks, and police cars accurately and in real-time.
-2. **Custom Data Integration**: Users can add new data through the data import or using `Object Detection Data Collection Graph UX` template and label their own data for model training.
-3. **Model Evaluation**: Evaluate trained models by double click `.tflite` file, and it will generate a Graph Ux project to run.
+2. **Custom Data Integration**: Users can add new data through data import or by using the `Object Detection Data Collection Graph UX` template and label their own data for model training.
+3. **Model Evaluation**: Evaluate trained models by double-clicking the `.tflite` file, and it will generate a Graph UX project to run.
 
 ## Contents
 
@@ -39,14 +39,14 @@ The **Emergency Vehicle Detection** project detects ambulances, fire trucks, and
 ## Steps to get started: Model Training and Evaluation
 
 1. Train the YOLO-based model using the provided dataset or custom data.
-2. Download the trained model `.tflite` file from trained job.
-3. Double click the `.tflite` file and it will create a Graph Ux project.
-4. Run the Graph UX project to evaluate model performance in real time using selected camera.
-5. Put in front of the camera pictures with ambulances, fire trucks, and police cars and observe detection from live camera.
+2. Download the trained model `.tflite` file from the trained job.
+3. Double-click the `.tflite` file and it will create a Graph UX project.
+4. Run the Graph UX project to evaluate model performance in real time using the selected camera.
+5. Place pictures of ambulances, fire trucks, and police cars in front of the camera and observe detection from the live camera.
 
 ## Sensor(s) & Data
 
-Image data is stored as DEEPCRAFT Studio object-detection sessions under `Data/`. Each session contains a JPG image and `LabelXml` annotations with normalized center bounding boxes (`X`, `Y`, `Width`, `Height`). The project currently contains 3,510 sessions targeting ambulances, fire trucks, and police cars.
+Image data is stored as DEEPCRAFT™ Studio object-detection sessions under `Data/`. Each session contains a JPG image and `LabelXml` annotations with normalized center bounding boxes (`X`, `Y`, `Width`, `Height`). The project currently contains 3,510 sessions targeting ambulances, fire trucks, and police cars.
 
 Data sources and commercial-use conditions:
 
@@ -78,7 +78,7 @@ You can add more data to the project following the steps below to improve detect
 1. Use `Object Detection Data Collection Graph UX` template to collect and label new data.
 2. Import data to your project and retrain to get an updated model.
 
-You can also import data from any other source (for example, your own images or another dataset) as long as it follows the DEEPCRAFT Studio object-detection format: images with matching `LabelXml` annotations using normalized center coordinates (`X`, `Y`, `Width`, `Height`). See [Bring your own data for object detection projects](https://developer.imagimob.com/deepcraft-studio/data-preparation/bring-your-data/bring-your-own-data-object-detection).
+You can also import data from any other source (for example, your own images or another dataset) as long as it follows the DEEPCRAFT™ Studio object-detection format: images with matching `LabelXml` annotations using normalized center coordinates (`X`, `Y`, `Width`, `Height`). See [Bring your own data for object detection projects](https://developer.imagimob.com/deepcraft-studio/data-preparation/bring-your-data/bring-your-own-data-object-detection).
 
 ## Steps to Production
 
@@ -92,181 +92,183 @@ The recommended path to production for this project includes the following steps
 
 Some points to highlight:
 
-- **Increase data variability:** Collect data from different environments, cameras, lighting conditions, distances, and backgrounds. Use DEEPCRAFT Studio augmentation settings (flip, scale, brightness, exposure) to increase image variability for vision models.
+- **Increase data variability:** Collect data from different environments, cameras, lighting conditions, distances, and backgrounds. Use DEEPCRAFT™ Studio augmentation settings (flip, scale, brightness, exposure) to increase image variability for vision models.
 - **Keep test data independent:** Make sure the test set is not used in train or validation and reflects scenarios where the model must generalize.
 - **Add negative data:** Include images without the target objects and common look-alikes to improve robustness against false positives.
 
-## Attribution & Citation
+## Attributions & Citations
 
-@misc{
-ambulances-23fqp_dataset,
-title = { Ambulances Dataset },
-type = { Open Source Dataset },
-author = { FYP Traffic Management System },
-howpublished = { \url{ https://universe.roboflow.com/fyp-traffic-management-system/ambulances-23fqp } },
-url = { https://universe.roboflow.com/fyp-traffic-management-system/ambulances-23fqp },
-journal = { Roboflow Universe },
-publisher = { Roboflow },
-year = { 2024 },
-month = { jan },
-note = { visited on 2026-07-14 },
+```bibtex
+@misc{ambulances-23fqp_dataset,
+  title = { Ambulances Dataset },
+  type = { Open Source Dataset },
+  author = { FYP Traffic Management System },
+  howpublished = { \url{ https://universe.roboflow.com/fyp-traffic-management-system/ambulances-23fqp } },
+  url = { https://universe.roboflow.com/fyp-traffic-management-system/ambulances-23fqp },
+  journal = { Roboflow Universe },
+  publisher = { Roboflow },
+  year = { 2024 },
+  month = { jan },
+  note = { visited on 2026-07-14 },
 }
+```
 
-
-@misc{
-cameramodel_dataset,
-title = { cameramodel Dataset },
-type = { Open Source Dataset },
-author = { Gezamelijke Brandweer },
-howpublished = { \url{ https://universe.roboflow.com/gezamelijke-brandweer/cameramodel } },
-url = { https://universe.roboflow.com/gezamelijke-brandweer/cameramodel },
-journal = { Roboflow Universe },
-publisher = { Roboflow },
-year = { 2024 },
-month = { jan },
-note = { visited on 2026-07-14 },
+```bibtex
+@misc{cameramodel_dataset,
+  title = { cameramodel Dataset },
+  type = { Open Source Dataset },
+  author = { Gezamelijke Brandweer },
+  howpublished = { \url{ https://universe.roboflow.com/gezamelijke-brandweer/cameramodel } },
+  url = { https://universe.roboflow.com/gezamelijke-brandweer/cameramodel },
+  journal = { Roboflow Universe },
+  publisher = { Roboflow },
+  year = { 2024 },
+  month = { jan },
+  note = { visited on 2026-07-14 },
 }
+```
 
-
-@misc{
-emergency-vehicles-detection-xockh-af7sr-kvfuf_dataset,
-title = { Emergency Vehicles Detection Dataset },
-type = { Open Source Dataset },
-author = { yolov8 },
-howpublished = { \url{ https://universe.roboflow.com/yolov8-etfar/emergency-vehicles-detection-xockh-af7sr-kvfuf } },
-url = { https://universe.roboflow.com/yolov8-etfar/emergency-vehicles-detection-xockh-af7sr-kvfuf },
-journal = { Roboflow Universe },
-publisher = { Roboflow },
-year = { 2024 },
-month = { jan },
-note = { visited on 2026-07-14 },
+```bibtex
+@misc{emergency-vehicles-detection-xockh-af7sr-kvfuf_dataset,
+  title = { Emergency Vehicles Detection Dataset },
+  type = { Open Source Dataset },
+  author = { yolov8 },
+  howpublished = { \url{ https://universe.roboflow.com/yolov8-etfar/emergency-vehicles-detection-xockh-af7sr-kvfuf } },
+  url = { https://universe.roboflow.com/yolov8-etfar/emergency-vehicles-detection-xockh-af7sr-kvfuf },
+  journal = { Roboflow Universe },
+  publisher = { Roboflow },
+  year = { 2024 },
+  month = { jan },
+  note = { visited on 2026-07-14 },
 }
+```
 
-
-@misc{
-nn-ln8ka_dataset,
-title = { nn Dataset },
-type = { Open Source Dataset },
-author = { national school of applied science },
-howpublished = { \url{ https://universe.roboflow.com/national-school-of-applied-science-zh1i1/nn-ln8ka } },
-url = { https://universe.roboflow.com/national-school-of-applied-science-zh1i1/nn-ln8ka },
-journal = { Roboflow Universe },
-publisher = { Roboflow },
-year = { 2023 },
-month = { sep },
-note = { visited on 2026-07-14 },
+```bibtex
+@misc{nn-ln8ka_dataset,
+  title = { nn Dataset },
+  type = { Open Source Dataset },
+  author = { national school of applied science },
+  howpublished = { \url{ https://universe.roboflow.com/national-school-of-applied-science-zh1i1/nn-ln8ka } },
+  url = { https://universe.roboflow.com/national-school-of-applied-science-zh1i1/nn-ln8ka },
+  journal = { Roboflow Universe },
+  publisher = { Roboflow },
+  year = { 2023 },
+  month = { sep },
+  note = { visited on 2026-07-14 },
 }
+```
 
-
-@misc{
-police-cars-romania_dataset,
-title = { police-cars-romania Dataset },
-type = { Open Source Dataset },
-author = { Bogdan Andrei },
-howpublished = { \url{ https://universe.roboflow.com/bogdan-andrei-470kt/police-cars-romania } },
-url = { https://universe.roboflow.com/bogdan-andrei-470kt/police-cars-romania },
-journal = { Roboflow Universe },
-publisher = { Roboflow },
-year = { 2023 },
-month = { oct },
-note = { visited on 2026-07-14 },
+```bibtex
+@misc{police-cars-romania_dataset,
+  title = { police-cars-romania Dataset },
+  type = { Open Source Dataset },
+  author = { Bogdan Andrei },
+  howpublished = { \url{ https://universe.roboflow.com/bogdan-andrei-470kt/police-cars-romania } },
+  url = { https://universe.roboflow.com/bogdan-andrei-470kt/police-cars-romania },
+  journal = { Roboflow Universe },
+  publisher = { Roboflow },
+  year = { 2023 },
+  month = { oct },
+  note = { visited on 2026-07-14 },
 }
+```
 
-
-@misc{
-police-cars-sumfm_dataset,
-title = { Police Cars Dataset },
-type = { Open Source Dataset },
-author = { FYP TC },
-howpublished = { \url{ https://universe.roboflow.com/fyp-tc-idn2o/police-cars-sumfm } },
-url = { https://universe.roboflow.com/fyp-tc-idn2o/police-cars-sumfm },
-journal = { Roboflow Universe },
-publisher = { Roboflow },
-year = { 2022 },
-month = { jan },
-note = { visited on 2026-07-14 },
+```bibtex
+@misc{police-cars-sumfm_dataset,
+  title = { Police Cars Dataset },
+  type = { Open Source Dataset },
+  author = { FYP TC },
+  howpublished = { \url{ https://universe.roboflow.com/fyp-tc-idn2o/police-cars-sumfm } },
+  url = { https://universe.roboflow.com/fyp-tc-idn2o/police-cars-sumfm },
+  journal = { Roboflow Universe },
+  publisher = { Roboflow },
+  year = { 2022 },
+  month = { jan },
+  note = { visited on 2026-07-14 },
 }
+```
 
-
-@misc{
-police-cars-romania_dataset,
-title = { police-cars-romania Dataset },
-type = { Open Source Dataset },
-author = { Bogdan Andrei },
-howpublished = { \url{ https://universe.roboflow.com/bogdan-andrei-470kt/police-cars-romania } },
-url = { https://universe.roboflow.com/bogdan-andrei-470kt/police-cars-romania },
-journal = { Roboflow Universe },
-publisher = { Roboflow },
-year = { 2023 },
-month = { oct },
-note = { visited on 2026-07-14 },
+```bibtex
+@misc{police-cars-romania_dataset,
+  title = { police-cars-romania Dataset },
+  type = { Open Source Dataset },
+  author = { Bogdan Andrei },
+  howpublished = { \url{ https://universe.roboflow.com/bogdan-andrei-470kt/police-cars-romania } },
+  url = { https://universe.roboflow.com/bogdan-andrei-470kt/police-cars-romania },
+  journal = { Roboflow Universe },
+  publisher = { Roboflow },
+  year = { 2023 },
+  month = { oct },
+  note = { visited on 2026-07-14 },
 }
+```
 
-
-@misc{
-veicoliemergenza_dataset,
-title = { VeicoliEmergenza Dataset },
-type = { Open Source Dataset },
-author = { smartire },
-howpublished = { \url{ https://universe.roboflow.com/smartire/veicoliemergenza } },
-url = { https://universe.roboflow.com/smartire/veicoliemergenza },
-journal = { Roboflow Universe },
-publisher = { Roboflow },
-year = { 2026 },
-month = { may },
-note = { visited on 2026-07-14 },
+```bibtex
+@misc{veicoliemergenza_dataset,
+  title = { VeicoliEmergenza Dataset },
+  type = { Open Source Dataset },
+  author = { smartire },
+  howpublished = { \url{ https://universe.roboflow.com/smartire/veicoliemergenza } },
+  url = { https://universe.roboflow.com/smartire/veicoliemergenza },
+  journal = { Roboflow Universe },
+  publisher = { Roboflow },
+  year = { 2026 },
+  month = { may },
+  note = { visited on 2026-07-14 },
 }
+```
 
-
-@misc{
-polizei-bkn68_dataset,
-title = { polizei Dataset },
-type = { Open Source Dataset },
-author = { erknnung },
-howpublished = { \url{ https://universe.roboflow.com/erknnung/polizei-bkn68 } },
-url = { https://universe.roboflow.com/erknnung/polizei-bkn68 },
-journal = { Roboflow Universe },
-publisher = { Roboflow },
-year = { 2025 },
-month = { aug },
-note = { visited on 2026-07-14 },
+```bibtex
+@misc{polizei-bkn68_dataset,
+  title = { polizei Dataset },
+  type = { Open Source Dataset },
+  author = { erknnung },
+  howpublished = { \url{ https://universe.roboflow.com/erknnung/polizei-bkn68 } },
+  url = { https://universe.roboflow.com/erknnung/polizei-bkn68 },
+  journal = { Roboflow Universe },
+  publisher = { Roboflow },
+  year = { 2025 },
+  month = { aug },
+  note = { visited on 2026-07-14 },
 }
+```
 
-
-@misc{
-emergencyvehicledetection-wuasv_dataset,
-title = { EmergencyVehicleDetection Dataset },
-type = { Open Source Dataset },
-author = { smartire },
-howpublished = { \url{ https://universe.roboflow.com/smartire/emergencyvehicledetection-wuasv } },
-url = { https://universe.roboflow.com/smartire/emergencyvehicledetection-wuasv },
-journal = { Roboflow Universe },
-publisher = { Roboflow },
-year = { 2026 },
-month = { apr },
-note = { visited on 2026-07-14 },
+```bibtex
+@misc{emergencyvehicledetection-wuasv_dataset,
+  title = { EmergencyVehicleDetection Dataset },
+  type = { Open Source Dataset },
+  author = { smartire },
+  howpublished = { \url{ https://universe.roboflow.com/smartire/emergencyvehicledetection-wuasv } },
+  url = { https://universe.roboflow.com/smartire/emergencyvehicledetection-wuasv },
+  journal = { Roboflow Universe },
+  publisher = { Roboflow },
+  year = { 2026 },
+  month = { apr },
+  note = { visited on 2026-07-14 },
 }
+```
 
-
-@misc{
-firetruck2_dataset,
-title = { firetruck2 Dataset },
-type = { Open Source Dataset },
-author = { central university },
-howpublished = { \url{ https://universe.roboflow.com/central-university/firetruck2 } },
-url = { https://universe.roboflow.com/central-university/firetruck2 },
-journal = { Roboflow Universe },
-publisher = { Roboflow },
-year = { 2024 },
-month = { may },
-note = { visited on 2026-07-14 },
+```bibtex
+@misc{firetruck2_dataset,
+  title = { firetruck2 Dataset },
+  type = { Open Source Dataset },
+  author = { central university },
+  howpublished = { \url{ https://universe.roboflow.com/central-university/firetruck2 } },
+  url = { https://universe.roboflow.com/central-university/firetruck2 },
+  journal = { Roboflow Universe },
+  publisher = { Roboflow },
+  year = { 2024 },
+  month = { may },
+  note = { visited on 2026-07-14 },
 }
-
+```
 
 ## Getting Started
 
-Please visit [developer.imagimob.com](https://developer.imagimob.com), where you can read about Imagimob Studio and go through step-by-step tutorials to get you quickly started.
+Please visit [developer.imagimob.com](https://developer.imagimob.com), where you can read about DEEPCRAFT™ Studio and go through step-by-step tutorials to get you quickly started.
 
 For object-detection data formats, see [Bring your own data for object detection projects](https://developer.imagimob.com/deepcraft-studio/data-preparation/bring-your-data/bring-your-own-data-object-detection).
 
-If you need support or if you want to know how to deploy the model on to the device, please submit a ticket on the Infineon [community forum](https://community.infineon.com/t5/Imagimob/bd-p/Imagimob/page/1) Imagimob Studio page.
+## Help & Support
+
+If you need support or if you want to know how to deploy the model onto the device, please submit a ticket on the Infineon [community forum](https://community.infineon.com/t5/Imagimob/bd-p/Imagimob/page/1) DEEPCRAFT™ Studio page.

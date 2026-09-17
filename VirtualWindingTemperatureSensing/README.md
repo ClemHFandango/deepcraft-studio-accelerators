@@ -1,4 +1,5 @@
-﻿# Virtual Motor Winding Temperature Estimation
+# Virtual Motor Winding Temperature Estimation
+
 This project is designed to work exclusively with DEEPCRAFT™ Studio. Download it from [here](https://softwaretools.infineon.com/assets/com.ifx.tb.tool.deepcraftstudio)
 
 ## Overview - Use-Case
@@ -16,16 +17,16 @@ This machine learning project enables estimation of the temperature of motor win
 
 ## Contents
 
-`Data` - Contains raw MATLAB measurement files (.mat) and all processed data outputs
-- `measurement_data/` - Raw .mat files from TLE995x motor controller experiments
-- `processed/` - Pipeline outputs including CSVs, downsampled/normalized data, and training datasets
+**`Data`** - Contains raw MATLAB measurement files (.mat) and all processed data outputs
+- **`measurement_data/`** - Raw .mat files from TLE995x motor controller experiments
+- **`processed/`** - Pipeline outputs including CSVs, downsampled/normalized data, and training datasets
 
-`Models` - Folder where trained DEEPCRAFT models, predictions, and generated Edge code are saved
+**`Models`** - Folder where trained DEEPCRAFT™ models, predictions, and generated Edge code are saved
 
-`Resources` - Contains project resources including connection diagrams and documentation
+**`Resources`** - Contains project resources including connection diagrams and documentation
 
-`Tools` - Contains data processing scripts and virtual environment
-- `scripts/` - Complete data processing pipeline (MATLAB conversion, downsampling, normalization, splitting)
+**`Tools`** - Contains data processing scripts and virtual environment
+- **`scripts/`** - Complete data processing pipeline (MATLAB conversion, downsampling, normalization, splitting)
 
 ## Sensor(s) & Data
 
@@ -33,7 +34,7 @@ This machine learning project enables estimation of the temperature of motor win
 
 - **Target Motor:** [Pierburg CWA150](https://www.tecomotive.com/en/products/CWA150.html) water pump motor
 - **Power Supply:** 12V
-- **Motor Controller:** [REF_WATERPUMP150W](https://www.infineon.com/evaluation-board/REF-WATERPUMP150W) evaluation board with TLE995x. The firmware could be requested via Infineon Developer Center
+- **Motor Controller:** [REF_WATERPUMP150W](https://www.infineon.com/evaluation-board/REF-WATERPUMP150W) evaluation board with TLE995x. The firmware can be requested via Infineon Developer Center
 - **Temperature Sensors:**
   - Die temperature sensor (embedded in TLE995x) - Input feature
   - Coil temperature sensor - Any K-type thermocouple to measure the target motor winding temperature (ground truth), for example RS219/1016
@@ -202,3 +203,14 @@ To ensure robust model performance, collect data covering:
 - Define update strategy for model improvements
 ---
 
+## Attributions & Citations
+
+Unless noted otherwise, data included in this project was collected for this accelerator. Usage is subject to the [DEEPCRAFT™ Studio Terms and Conditions](https://developer.imagimob.com/legal/studio-terms-and-conditions).
+
+## Getting Started
+
+Please visit [developer.imagimob.com](https://developer.imagimob.com), where you can read about DEEPCRAFT™ Studio and go through step-by-step tutorials to get you quickly started.
+
+## Help & Support
+
+If you need support or if you want to know how to deploy the model onto the device, please submit a ticket on the Infineon [community forum](https://community.infineon.com/t5/Imagimob/bd-p/Imagimob/page/1) DEEPCRAFT™ Studio page.

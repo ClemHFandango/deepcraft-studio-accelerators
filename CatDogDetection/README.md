@@ -13,15 +13,15 @@ The object detection model is YOLO-based and it can be used in applications for
 
 Users can further expand this project by training their own models, importing new data, and evaluating performance using the provided tools.
 
-- **Machine learning method:** YOLO-based object detection trained in DEEPCRAFT Studio
+- **Machine learning method:** YOLO-based object detection trained in DEEPCRAFT™ Studio
 - **Sensor and data type:** RGB camera or live video input (image data)
 - **Why it matters:** Enables pet monitoring and smart-home automation from live camera feeds.
 
 ## Features
 
 1. **Real-Time Detection**: The project uses a YOLO-based model to detect and classify cats and dogs accurately and in real-time.
-2. **Custom Data Integration**: Users can add new data through the data import or using `Object Detection Data Collection Graph UX` template and label their own data for model training.
-3. **Model Evaluation**: Evaluate trained models by double click `.tflite` file, and it will generate a Graph Ux project to run.
+2. **Custom Data Integration**: Users can add new data through data import or by using the `Object Detection Data Collection Graph UX` template and label their own data for model training.
+3. **Model Evaluation**: Evaluate trained models by double-clicking the `.tflite` file, and it will generate a Graph UX project to run.
 
 ## Contents
 
@@ -39,10 +39,10 @@ Users can further expand this project by training their own models, importing ne
 ## Steps to get started: Model Training and Evaluation
 
 1. Train the YOLO-based model using the provided dataset or custom data.
-2. Download the trained model `.tflite` file from trained job.
-3. Double click the `.tflite` file and it will create a Graph Ux project.
-4. Run the Graph UX project to evaluate model performance in real time using selected camera.
-5. Put in front of the camera pictures with cats and dogs and observe detection from live camera.
+2. Download the trained model `.tflite` file from the trained job.
+3. Double-click the `.tflite` file and it will create a Graph UX project.
+4. Run the Graph UX project to evaluate model performance in real time using the selected camera.
+5. Place pictures of cats and dogs in front of the camera and observe detection from the live camera.
 
 ## Sensor(s) & Data
 
@@ -64,7 +64,7 @@ You can add more data to the project following the steps below to improve detect
 1. Use `Object Detection Data Collection Graph UX` template to collect and label new data.
 2. Import data to your project and retrain to get an updated model.
 
-You can also import data from any other source (for example, your own images or another dataset) as long as it follows the DEEPCRAFT Studio object-detection format: images with matching `LabelXml` annotations using normalized center coordinates (`X`, `Y`, `Width`, `Height`). See [Bring your own data for object detection projects](https://developer.imagimob.com/deepcraft-studio/data-preparation/bring-your-data/bring-your-own-data-object-detection).
+You can also import data from any other source (for example, your own images or another dataset) as long as it follows the DEEPCRAFT™ Studio object-detection format: images with matching `LabelXml` annotations using normalized center coordinates (`X`, `Y`, `Width`, `Height`). See [Bring your own data for object detection projects](https://developer.imagimob.com/deepcraft-studio/data-preparation/bring-your-data/bring-your-own-data-object-detection).
 
 ## Steps to Production
 
@@ -78,76 +78,78 @@ The recommended path to production for this project includes the following steps
 
 Some points to highlight:
 
-- **Increase data variability:** Collect data from different environments, cameras, lighting conditions, distances, and backgrounds. Use DEEPCRAFT Studio augmentation settings (flip, scale, brightness, exposure) to increase image variability for vision models.
+- **Increase data variability:** Collect data from different environments, cameras, lighting conditions, distances, and backgrounds. Use DEEPCRAFT™ Studio augmentation settings (flip, scale, brightness, exposure) to increase image variability for vision models.
 - **Keep test data independent:** Make sure the test set is not used in train or validation and reflects scenarios where the model must generalize.
 - **Add negative data:** Include images without the target objects and common look-alikes to improve robustness against false positives.
 
-## Attribution & Citation
+## Attributions & Citations
 
-@misc{
-object-detection-cat-and-dogs_dataset,
-title = { Object Detection Cat and Dogs Dataset },
-type = { Open Source Dataset },
-author = { Cats and Dogs Detection },
-howpublished = { \url{ https://universe.roboflow.com/cats-and-dogs-detection/object-detection-cat-and-dogs } },
-url = { https://universe.roboflow.com/cats-and-dogs-detection/object-detection-cat-and-dogs },
-journal = { Roboflow Universe },
-publisher = { Roboflow },
-year = { 2023 },
-month = { sep },
-note = { visited on 2026-07-07 },
+```bibtex
+@misc{object-detection-cat-and-dogs_dataset,
+  title = { Object Detection Cat and Dogs Dataset },
+  type = { Open Source Dataset },
+  author = { Cats and Dogs Detection },
+  howpublished = { \url{ https://universe.roboflow.com/cats-and-dogs-detection/object-detection-cat-and-dogs } },
+  url = { https://universe.roboflow.com/cats-and-dogs-detection/object-detection-cat-and-dogs },
+  journal = { Roboflow Universe },
+  publisher = { Roboflow },
+  year = { 2023 },
+  month = { sep },
+  note = { visited on 2026-07-07 },
 }
+```
 
-
-@misc{
-230518_catdog-d8fif_dataset,
-title = { 230518_catdog Dataset },
-type = { Open Source Dataset },
-author = { BORAM },
-howpublished = { \url{ https://universe.roboflow.com/boram-prebk/230518_catdog-d8fif } },
-url = { https://universe.roboflow.com/boram-prebk/230518_catdog-d8fif },
-journal = { Roboflow Universe },
-publisher = { Roboflow },
-year = { 2023 },
-month = { may },
-note = { visited on 2026-07-07 },
+```bibtex
+@misc{230518_catdog-d8fif_dataset,
+  title = { 230518_catdog Dataset },
+  type = { Open Source Dataset },
+  author = { BORAM },
+  howpublished = { \url{ https://universe.roboflow.com/boram-prebk/230518_catdog-d8fif } },
+  url = { https://universe.roboflow.com/boram-prebk/230518_catdog-d8fif },
+  journal = { Roboflow Universe },
+  publisher = { Roboflow },
+  year = { 2023 },
+  month = { may },
+  note = { visited on 2026-07-07 },
 }
+```
 
-
-@misc{
-dogs-vs-cats_dataset,
-title = { Dogs vs Cats Dataset },
-type = { Open Source Dataset },
-author = { personal },
-howpublished = { \url{ https://universe.roboflow.com/personal-buhbs/dogs-vs-cats } },
-url = { https://universe.roboflow.com/personal-buhbs/dogs-vs-cats },
-journal = { Roboflow Universe },
-publisher = { Roboflow },
-year = { 2022 },
-month = { aug },
-note = { visited on 2026-07-07 },
+```bibtex
+@misc{dogs-vs-cats_dataset,
+  title = { Dogs vs Cats Dataset },
+  type = { Open Source Dataset },
+  author = { personal },
+  howpublished = { \url{ https://universe.roboflow.com/personal-buhbs/dogs-vs-cats } },
+  url = { https://universe.roboflow.com/personal-buhbs/dogs-vs-cats },
+  journal = { Roboflow Universe },
+  publisher = { Roboflow },
+  year = { 2022 },
+  month = { aug },
+  note = { visited on 2026-07-07 },
 }
+```
 
-
-@misc{
-cats-n9b87_dataset,
-title = { Cats Dataset },
-type = { Open Source Dataset },
-author = { Mohamed Traore },
-howpublished = { \url{ https://universe.roboflow.com/mohamed-traore-2ekkp/cats-n9b87 } },
-url = { https://universe.roboflow.com/mohamed-traore-2ekkp/cats-n9b87 },
-journal = { Roboflow Universe },
-publisher = { Roboflow },
-year = { 2022 },
-month = { nov },
-note = { visited on 2026-07-07 },
+```bibtex
+@misc{cats-n9b87_dataset,
+  title = { Cats Dataset },
+  type = { Open Source Dataset },
+  author = { Mohamed Traore },
+  howpublished = { \url{ https://universe.roboflow.com/mohamed-traore-2ekkp/cats-n9b87 } },
+  url = { https://universe.roboflow.com/mohamed-traore-2ekkp/cats-n9b87 },
+  journal = { Roboflow Universe },
+  publisher = { Roboflow },
+  year = { 2022 },
+  month = { nov },
+  note = { visited on 2026-07-07 },
 }
-
+```
 
 ## Getting Started
 
-Please visit [developer.imagimob.com](https://developer.imagimob.com), where you can read about Imagimob Studio and go through step-by-step tutorials to get you quickly started.
+Please visit [developer.imagimob.com](https://developer.imagimob.com), where you can read about DEEPCRAFT™ Studio and go through step-by-step tutorials to get you quickly started.
 
 For object-detection data formats, see [Bring your own data for object detection projects](https://developer.imagimob.com/deepcraft-studio/data-preparation/bring-your-data/bring-your-own-data-object-detection).
 
-If you need support or if you want to know how to deploy the model on to the device, please submit a ticket on the Infineon [community forum](https://community.infineon.com/t5/Imagimob/bd-p/Imagimob/page/1) Imagimob Studio page.
+## Help & Support
+
+If you need support or if you want to know how to deploy the model onto the device, please submit a ticket on the Infineon [community forum](https://community.infineon.com/t5/Imagimob/bd-p/Imagimob/page/1) DEEPCRAFT™ Studio page.

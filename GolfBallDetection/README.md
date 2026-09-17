@@ -1,8 +1,8 @@
-﻿# Golf Ball Detection - DEEPCRAFT™ Studio Accelerator project.
+# Golf Ball Detection - DEEPCRAFT™ Studio Accelerator project.
 
-This project is designed to work exclusively with DEEPCRAFT™ Studio.
+This project is designed to work exclusively with DEEPCRAFT™ Studio. Download it from [here](https://softwaretools.infineon.com/assets/com.ifx.tb.tool.deepcraftstudio)
 
-## Use-case description
+## Overview - Use-Case
 
 This Studio Accelerator aims to provide general guidance on how to develop a Computer Vision project for **golf ball detection** with RGB camera.
 
@@ -28,33 +28,29 @@ This project demonstrates how to approach the task from a Computer Vision perspe
 
 ## Contents
 
-`Data` - Folder to put your data. `Data\golf-ball-public` contains public dataset. `Data\infineon-public` contains additional data collected by Infineon team. 
+**`Data`** - Folder to put your data. `Data\golf-ball-public` contains public dataset. `Data\infineon-public` contains additional data collected by Infineon team. 
 
-`Models` - Folder where trained models, their predictions, and generated Edge code are saved.
-
-`Units`    - Folder where custom layers and pre-processors can be added. Not used in this project.
-
-`Tools`    - Folder containing additional tools and project. Not used in this project.
+**`Models`** - Folder where trained models, their predictions, and generated Edge code are saved.
 
 
-## Sensor settings specification
+## Sensor(s) & Data
 
-This starter project requires the [PSOC™ EDGE Evaluation Kit](https://www.infineon.com/evaluation-board/kit-pse84-eval). This platform is equipped with PSOC™ Edge E84 MCU and a USB Camera Module. The board is designed for easy prototyping and lets you collect real-life data to easily build a compelling ML product fast.
+This Accelerator was built using data collected with the [PSOC™ EDGE Evaluation Kit](https://www.infineon.com/evaluation-board/kit-pse84-eval). This platform is equipped with PSOC™ Edge E84 MCU and a USB Camera Module.
 
 Having some golf balls available is optional; but you might need them to test the model and collect additional data. However, if you want to test the project out-of-the-box, you could also show the camera some pictures of golf balls on your laptop screen or your phone.
 
 ![](Resources/imgs/golfballs-labels.png)
 
 
-## Collecting and expanding the dataset
+## Adding More Data
 
 To add more data, you can either rely on Studio's live data collection from Computer Vision project: [Real-Time Image data collection and labeling using camera](https://developer.imagimob.com/deepcraft-studio/data-preparation/data-collection/collect-data-without-kit/collect-image-data-using-graph-ux), or you can add your dataset collected with other means.
-If you want to import data collected externally, for example with a mobile phone or with a camera on the field, please refer to (Bring your own data for object detection projects)[https://developer.imagimob.com/deepcraft-studio/data-preparation/bring-your-data/bring-your-own-data-object-detection]
+If you want to import data collected externally, for example with a mobile phone or with a camera on the field, please refer to [Bring your own data for object detection projects](https://developer.imagimob.com/deepcraft-studio/data-preparation/bring-your-data/bring-your-own-data-object-detection)
 
 **Hint**: if you collect data with a mobile phone or another camera, try to set the camera to provide squared images. This will be make easier to process image later and will avoid unwanted stretching.
 
 
-## Recommended path to production
+## Steps to Production
 
 To bring this project to a production-level system, follow these general steps:
 
@@ -70,29 +66,52 @@ To bring this project to a production-level system, follow these general steps:
 
 **3. Import your data and train the prototype model**
 
-  Import the data you collected in DEEPCRAFT Studio.
-  You are now able to follow the standard DEEPCRAFT Studio steps for processing, training, and deploying your Computer Vision model.
+  Import the data you collected in DEEPCRAFT™ Studio.
+  You are now able to follow the standard DEEPCRAFT™ Studio steps for processing, training, and deploying your Computer Vision model.
 
   **4. Deploy and do a real-time test of your prototype model**
 
-  Last thing to be done in prototyping phase is to deploy the model to the device by leveraging the template application already available in ModusToolbox:[MTB Example ML Imagimob MTBML Deploy](https://developer.imagimob.com/deepcraft-studio/deployment/deploy-models-supported-boards/deploy-vision-model-PSOC-Edge) and test the firmware on the machinery. The display will show you real-time detection bounding boxes.
+  The last step in the prototyping phase is to deploy the model to the device by leveraging the template application already available in ModusToolbox: [MTB Example ML Imagimob MTBML Deploy](https://developer.imagimob.com/deepcraft-studio/deployment/deploy-models-supported-boards/deploy-vision-model-PSOC-Edge) and test the firmware on the machinery. The display will show you real-time detection bounding boxes.
 
   **5. Going to the production board system**
 
-Last step is to move to the actual final production setup. The production system will likely have the camera placed on a specific place on the final setup, not necessarly the same one of the prorotyping phase. If you can go as close as possible to production conditions during prototyping phase, you will be able to deliver the same model also on the production board with little-to-no additional training or data needed. If this is not the case, you might need to do a new data collection step to allow the model to learn the nuances of the final setup. Follow again steps 2, 3 and 4 also for the production setup to reach a functioning application.
+The last step is to move to the actual final production setup. The production system will likely have the camera placed in a specific place on the final setup, not necessarily the same as in the prototyping phase. If you can go as close as possible to production conditions during prototyping phase, you will be able to deliver the same model also on the production board with little-to-no additional training or data needed. If this is not the case, you might need to do a new data collection step to allow the model to learn the nuances of the final setup. Follow again steps 2, 3 and 4 also for the production setup to reach a functioning application.
 
-**Note:** All subsequent ML system lifetime monitoring procedures must be defined and implemented by you according to you needs, requirements and targets.
+**Note:** All subsequent ML system lifetime monitoring procedures must be defined and implemented by you according to your needs, requirements and targets.
 
-## Dataset Attributions and Citations
+## Attributions & Citations
 
-@misc{ golfball-pedge-detector, title = { GolfBall Dataset }, type = { Open Source Dataset }, author = { lolepls }, howpublished = { \url{ https://app.roboflow.com/lolepls/golf-ball-raahi-k2ygw/2 } }, url = { https://app.roboflow.com/lolepls/golf-ball-raahi-k2ygw/2 }, journal = { Roboflow Universe }, publisher = { Roboflow }, year = { 2026 }, month = { jan }, note = { visited on 2026-02-09 }, }
+```bibtex
+@misc{golfball-pedge-detector,
+  title = { GolfBall Dataset },
+  type = { Open Source Dataset },
+  author = { lolepls },
+  howpublished = { \url{ https://app.roboflow.com/lolepls/golf-ball-raahi-k2ygw/2 } },
+  url = { https://app.roboflow.com/lolepls/golf-ball-raahi-k2ygw/2 },
+  journal = { Roboflow Universe },
+  publisher = { Roboflow },
+  year = { 2026 },
+  month = { jan },
+  note = { visited on 2026-02-09 },
+}
+```
 
-@misc{ infineon-public-golfball-dataset, title = { Infineon Public GolfBall Dataset }, type = { Open Source Dataset }, author = { Gioele Mombelli }, journal = { DEEPCRAFT Studio Accelerators }, publisher = { Infineon }, year = { 2026 }, month = { jan }, }
+```bibtex
+@misc{infineon-public-golfball-dataset,
+  title = { Infineon Public GolfBall Dataset },
+  type = { Open Source Dataset },
+  author = { Gioele Mombelli },
+  journal = { DEEPCRAFT™ Studio Accelerators },
+  publisher = { Infineon },
+  year = { 2026 },
+  month = { jan },
+}
+```
 
 ## Getting Started
 
-Please visit [developer.imagimob.com](https://developer.imagimob.com), where you can read about Imagimob Studio and go through step-by-step tutorials to get you quickly started.
+Please visit [developer.imagimob.com](https://developer.imagimob.com), where you can read about DEEPCRAFT™ Studio and go through step-by-step tutorials to get you quickly started.
 
 ## Help & Support
 
-If you need support or if you want to know how to deploy the model on to the device, please submit a ticket on the Infineon [community forum ](https://community.infineon.com/t5/Imagimob/bd-p/Imagimob/page/1) Imagimob Studio page.
+If you need support or if you want to know how to deploy the model onto the device, please submit a ticket on the Infineon [community forum](https://community.infineon.com/t5/Imagimob/bd-p/Imagimob/page/1) DEEPCRAFT™ Studio page.
