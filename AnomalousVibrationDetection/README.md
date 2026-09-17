@@ -1,6 +1,6 @@
 ﻿# Anomaly Detection for Vibrating Machinery - Studio Accelerator Project
 
-This project is designed to work exclusively with DEEPCRAFT™ Studio. Download it from [here](https://softwaretools.infineon.com/assets/com.ifx.tb.tool.deepcraftstudio)
+This Accelerator is designed to work exclusively with DEEPCRAFT™ Studio. Download it from [here](https://softwaretools.infineon.com/assets/com.ifx.tb.tool.deepcraftstudio)
 
 ## Use-case description
 
