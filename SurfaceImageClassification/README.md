@@ -81,8 +81,6 @@ The recommended path to production for this project includes the following steps
 
 ## Attributions & Citations
 
-This dataset in turn contains data derived from multiple projects:
-
 Road Surface Classification Dataset created by Team Roboflow and licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
 ```bibtex
