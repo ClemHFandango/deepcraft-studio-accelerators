@@ -1,6 +1,6 @@
 {
-  "title": "Empty Object Detection Project",
-  "description": "Create a new object detection project.",
+  "title": "Bird and Drone Detection",
+  "description": "Detect birds and drones within an image",
   "long_description": "This project aims to identify birds and drones using a YOLO-based model in realtime via live camera input or still images.",
   "algorithm": "Object Detection",
   "sensors": ["Camera"],
