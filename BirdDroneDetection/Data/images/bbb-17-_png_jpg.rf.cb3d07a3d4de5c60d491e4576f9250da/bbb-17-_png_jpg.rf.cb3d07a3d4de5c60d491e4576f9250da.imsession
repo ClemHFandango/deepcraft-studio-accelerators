@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ImagimobStudio version="0.9">
+  <Timeline id="7b404e74-91f7-49f6-b053-35f4d15c187d">
+    <Tracks>
+      <Track name="image" type="imagejpg">
+        <PayloadFile>bbb-17-_png_jpg.rf.cb3d07a3d4de5c60d491e4576f9250da.jpg</PayloadFile>
+      </Track>
+      <Track name="label" type="labelxml">
+        <PayloadFile>bbb-17-_png_jpg.rf.cb3d07a3d4de5c60d491e4576f9250da.labelxml</PayloadFile>
+      </Track>
+    </Tracks>
+  </Timeline>
+</ImagimobStudio>
