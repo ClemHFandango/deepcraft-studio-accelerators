@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Annotations>
+  <Annotation>
+    <Object>
+      <Name>Drone</Name>
+      <Bndbox>
+        <X>0.4200520833333333</X>
+        <Y>0.5311926605504587</Y>
+        <Width>0.07083333333333333</Width>
+        <Height>0.0853211009174312</Height>
+      </Bndbox>
+    </Object>
+  </Annotation>
+</Annotations>
