@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Annotations>
+  <Annotation>
+    <Object>
+      <Name>Drone</Name>
+      <Bndbox>
+        <X>0.37797619047619047</X>
+        <Y>0.7042801556420234</Y>
+        <Width>0.1130952380952381</Width>
+        <Height>0.27626459143968873</Height>
+      </Bndbox>
+    </Object>
+  </Annotation>
+  <Annotation>
+    <Object>
+      <Name>Drone</Name>
+      <Bndbox>
+        <X>0.43898809523809523</X>
+        <Y>0.39883268482490275</Y>
+        <Width>0.1130952380952381</Width>
+        <Height>0.3151750972762646</Height>
+      </Bndbox>
+    </Object>
+  </Annotation>
+  <Annotation>
+    <Object>
+      <Name>Drone</Name>
+      <Bndbox>
+        <X>0.5729166666666666</X>
+        <Y>0.21595330739299612</Y>
+        <Width>0.23214285714285715</Width>
+        <Height>0.40077821011673154</Height>
+      </Bndbox>
+    </Object>
+  </Annotation>
+  <Annotation>
+    <Object>
+      <Name>Drone</Name>
+      <Bndbox>
+        <X>0.6696428571428571</X>
+        <Y>0.546692607003891</Y>
+        <Width>0.14434523809523808</Width>
+        <Height>0.3540856031128405</Height>
+      </Bndbox>
+    </Object>
+  </Annotation>
+</Annotations>
