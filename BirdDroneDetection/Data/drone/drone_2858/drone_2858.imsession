@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ImagimobStudio version="0.9">
+  <Timeline id="f9d6880d-92b6-4751-a6ea-1f50452be880">
+    <Tracks>
+      <Track name="image" type="imagejpg">
+        <PayloadFile>drone_2858.jpg</PayloadFile>
+        <Shape />
+      </Track>
+      <Track name="label" type="labelxml">
+        <PayloadFile>drone_2858.labelxml</PayloadFile>
+        <Shape />
+      </Track>
+      <Track name="yolo26n-size224-batch128-epoch200_predictions_val" type="labelxml">
+        <PayloadFile>..\..\..\Models\yolo26n-size224-batch128-epoch200\predictions\sessions\drone_2858\drone_2858_pred.labelxml</PayloadFile>
+        <Shape />
+      </Track>
+    </Tracks>
+  </Timeline>
+</ImagimobStudio>
