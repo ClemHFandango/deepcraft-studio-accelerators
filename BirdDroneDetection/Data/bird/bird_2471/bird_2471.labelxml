@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Annotations>
+  <Annotation>
+    <Object>
+      <Name>Bird</Name>
+      <Bndbox>
+        <X>0.47682291666666665</X>
+        <Y>0.4708333333333333</Y>
+        <Width>0.44114583333333335</Width>
+        <Height>0.6324074074074074</Height>
+      </Bndbox>
+    </Object>
+  </Annotation>
+</Annotations>
